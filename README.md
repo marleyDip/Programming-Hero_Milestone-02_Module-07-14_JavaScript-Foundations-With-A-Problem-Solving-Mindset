@@ -1,4 +1,4 @@
-# JavaScript Foundations with a Problem-Solving Mindset 🚀
+# JavaScript Foundations with a Problem-Solving Mindset
 
 Welcome to my repository for **Programming Hero - Milestone 02 (Modules 07-14)**. This milestone focuses entirely on mastering core JavaScript concepts and developing the critical analytical skills required to solve programming challenges efficiently.
 
@@ -31,6 +31,9 @@ Deep diving into JavaScript fundamentals. This repository tracks my hands-on pro
 * **Editor:** Visual Studio Code (VS Code)
 * **Terminal/CLI:** Git Bash / Zsh
 * **Debugging Tools:** Chrome Developer Tools (Console, Breakpoints)
+
+## 🚀 Live Demo
+***https://marleydip.github.io/Programming-Hero_Milestone-02_Module-07-14_JavaScript-Foundations-With-A-Problem-Solving-Mindset/***
 
 ## 🏃‍♂️ How to Run the Files Locally
 
