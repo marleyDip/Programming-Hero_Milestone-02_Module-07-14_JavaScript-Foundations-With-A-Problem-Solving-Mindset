@@ -1,0 +1,358 @@
+/* ============================================================
+   JavaScript Practice — style.css
+   Design concept: a code editor's own chrome, turned into a
+   landing page. Title bar with window controls, a file tab,
+   a grid of "file cards" with extension badges and comment-
+   style descriptions, and a live status bar at the foot —
+   all lifted straight from the tool this course teaches you
+   to use.
+   ============================================================ */
+
+:root {
+  /* Palette — VS Code Dark+ inspired, grounded in the subject */
+  --bg: #1e1e1e;
+  --bg-panel: #252526;
+  --bg-elevated: #2d2d30;
+  --border: #3c3c3c;
+  --border-soft: #333333;
+
+  --text: #d4d4d4;
+  --text-dim: #8a8a8a;
+  --text-faint: #5a5a5a;
+
+  --accent-yellow: #f7df1e; /* JS gold */
+  --accent-blue: #3794ff; /* status bar / links */
+  --accent-green: #6a9955; /* comment green */
+  --accent-orange: #ce9178; /* string orange */
+
+  --radius: 6px;
+  --font-mono:
+    "JetBrains Mono", "Fira Code", ui-monospace, Menlo, Consolas, monospace;
+  --font-sans:
+    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  --shadow-lift: 0 12px 24px -8px rgba(0, 0, 0, 0.55);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  padding-bottom: 44px; /* leave room for fixed status bar */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------------- Editor title bar ---------------- */
+.titlebar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 18px;
+  background: var(--bg-elevated);
+  border-bottom: 1px solid var(--border);
+}
+
+.titlebar .dots {
+  display: flex;
+  gap: 7px;
+  flex-shrink: 0;
+}
+
+.titlebar .dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+
+.dot.red {
+  background: #ff5f56;
+}
+.dot.yellow {
+  background: #ffbd2e;
+}
+.dot.green {
+  background: #27c93f;
+}
+
+.titlebar .tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-soft);
+  border-bottom: none;
+  padding: 6px 14px;
+  border-radius: 5px 5px 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-dim);
+}
+
+.titlebar .tab::before {
+  content: "JS";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: #1e1e1e;
+  background: var(--accent-yellow);
+  border-radius: 3px;
+}
+
+/* ---------------- Header / hero ---------------- */
+header {
+  padding: 64px 24px 40px;
+  text-align: left;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+header .eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--accent-green);
+  margin: 0 0 14px;
+  letter-spacing: 0.02em;
+}
+
+header .eyebrow::before {
+  content: "// ";
+  color: var(--text-faint);
+}
+
+header h1 {
+  font-family: var(--font-mono);
+  font-size: clamp(2rem, 5vw, 2.9rem);
+  font-weight: 700;
+  margin: 0 0 10px;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+header h1 .accent {
+  color: var(--accent-yellow);
+}
+
+header p {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  color: var(--text-dim);
+  margin: 0;
+}
+
+header p .path {
+  color: var(--accent-orange);
+}
+
+/* ---------------- Card grid ---------------- */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px 72px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: inherit;
+  overflow: hidden;
+  transition:
+    transform 0.18s ease,
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.card:hover,
+.card:focus-visible {
+  transform: translateY(-4px);
+  border-color: var(--accent-yellow);
+  box-shadow: var(--shadow-lift);
+}
+
+.card:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+}
+
+/* file-tab strip at the top of each card */
+.card .file-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: var(--bg-elevated);
+  border-bottom: 1px solid var(--border-soft);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-faint);
+}
+
+.card .file-strip .ext {
+  color: #1e1e1e;
+  background: var(--accent-yellow);
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-size: 0.68rem;
+}
+
+.card .file-strip .num {
+  color: var(--text-dim);
+}
+
+.card-body {
+  padding: 18px 18px 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card h2 {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.card h2::before {
+  content: "> ";
+  color: var(--accent-yellow);
+}
+
+.card p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--accent-green);
+  font-family: var(--font-mono);
+}
+
+.card p::before {
+  content: "// ";
+  color: var(--text-faint);
+}
+
+/* blinking cursor cue, revealed on hover — subtle, purposeful motion */
+.card .cursor {
+  display: inline-block;
+  width: 7px;
+  height: 1em;
+  background: var(--accent-yellow);
+  margin-left: 2px;
+  opacity: 0;
+  vertical-align: text-bottom;
+  animation: blink 1s step-end infinite;
+}
+
+.card:hover .cursor,
+.card:focus-visible .cursor {
+  opacity: 1;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* ---------------- Status bar (fixed, editor-style) ---------------- */
+.statusbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 18px;
+  background: var(--accent-blue);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  z-index: 10;
+}
+
+.statusbar .left,
+.statusbar .right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.statusbar .live {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.statusbar .live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #27c93f;
+  animation: pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+/* ---------------- Motion & accessibility ---------------- */
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .card .cursor,
+  .statusbar .live-dot {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ---------------- Responsive ---------------- */
+@media (max-width: 600px) {
+  header {
+    padding: 48px 18px 28px;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    padding: 0 18px 72px;
+  }
+
+  .statusbar {
+    font-size: 0.65rem;
+    padding: 6px 12px;
+  }
+
+  .statusbar .right .branch {
+    display: none;
+  }
+}
