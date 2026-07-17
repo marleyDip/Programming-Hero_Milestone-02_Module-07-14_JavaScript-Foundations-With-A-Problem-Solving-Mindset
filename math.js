@@ -17,3 +17,16 @@
  *
  *
  */
+
+let car = 25;
+let totalStudent = 3930;
+const department = 5 - 3;
+const familyMember = 12.5;
+let setMenu = 24;
+setMenu = 31 / 2;
+
+console.log(car);
+console.log(totalStudent);
+console.log(department);
+console.log(familyMember);
+console.log(setMenu);
