@@ -33,7 +33,7 @@ Deep diving into JavaScript fundamentals. This repository tracks my hands-on pro
 * **Debugging Tools:** Chrome Developer Tools (Console, Breakpoints)
 
 ## 🚀 Live Demo
-<a href="https://marleydip.github.io/Programming-Hero_Milestone-02_Module-07-14_JavaScript-Foundations-With-A-Problem-Solving-Mindset/" target="_blank">***Click Here to View Live Demo***</a>
+***[Click Here to View Live Demo](https://marleydip.github.io/Programming-Hero_Milestone-02_Module-07-14_JavaScript-Foundations-With-A-Problem-Solving-Mindset/)*** *(Ctrl + Click to open in a new tab!)*
 
 ## 🏃‍♂️ How to Run the Files Locally
 
