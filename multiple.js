@@ -3,10 +3,6 @@
  * Multiple Condition Logical Operator (&& and ||)
  *
  *
- *
- *
- *
- *
  */
 
 const salary = 75000;
