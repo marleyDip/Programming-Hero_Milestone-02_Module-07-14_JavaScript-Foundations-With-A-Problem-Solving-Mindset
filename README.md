@@ -8,7 +8,7 @@
 
 <img width="812" height="587" alt="image" src="https://github.com/user-attachments/assets/dfb2381a-b025-4616-ac5c-8e0622ef451a" />
 
-<img width="812" height="645" alt="image" src="https://github.com/user-attachments/assets/a83ade93-4354-49c6-95af-cbe00add242e" />
+<img width="812" height="737" alt="image" src="https://github.com/user-attachments/assets/efdbd2c6-a731-4947-9f6d-b8e3caf89fb2" />
 
 
 ## Task 24 - Build a simple discount system: if cart total is above 1000 AND the user is a member, apply a 20% discount; if only above 1000, apply a 10% discount; otherwise, no discount
