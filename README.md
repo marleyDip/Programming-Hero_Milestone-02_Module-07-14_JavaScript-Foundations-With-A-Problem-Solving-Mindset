@@ -1,13 +1,15 @@
 # Module 08 - *Fundamental Concepts of Conditionals (Conditionals, logical operators, and decision-making logic)*
 
+## Task 15 -  Using isLoggedIn and isAdmin, build a nested condition — if logged in and admin, print "Admin Dashboard"; if logged in but not admin, print "User Dashboard"; if not logged in, print "Please Login"
+<img width="812" height="315" alt="image" src="https://github.com/user-attachments/assets/aabe812f-a440-4d32-a7eb-30fe57a76ae7" />
+
 ## Task 20 - A triangle is valid only if the sum of any two sides is greater than the third side.
 <img width="812" height="587" alt="image" src="https://github.com/user-attachments/assets/4fc0a068-e2cc-410e-b49b-883d8f42d6a4" />
 
 <img width="812" height="587" alt="image" src="https://github.com/user-attachments/assets/dfb2381a-b025-4616-ac5c-8e0622ef451a" />
 
-## Task 20 -
+<img width="812" height="645" alt="image" src="https://github.com/user-attachments/assets/a83ade93-4354-49c6-95af-cbe00add242e" />
 
-## Task 20 -
 
 ## Task 24 - Build a simple discount system: if cart total is above 1000 AND the user is a member, apply a 20% discount; if only above 1000, apply a 10% discount; otherwise, no discount
 <img width="812" height="422" alt="image" src="https://github.com/user-attachments/assets/d3138637-29be-4f3a-8c70-863249e0a890" />
