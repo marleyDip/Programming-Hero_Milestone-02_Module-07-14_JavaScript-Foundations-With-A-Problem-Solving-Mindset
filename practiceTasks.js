@@ -17,6 +17,8 @@
  *
  */
 
+/* ===== Basic or Easy Problem ===== */
+
 // Task 01 - Take two variables price1 and price2, and compare them using all comparison operators (==, ===, !=, !==, >, <, >=, <=), printing each result with console.log.
 console.log(`
 // ===========================================
@@ -234,137 +236,10 @@ if (stock === 0) {
 
 console.log();
 
-// Task 05 - Take a number variable and check whether it is positive or negative (using if-else).
+// Task 05 - Take a speed variable. If speed is greater than 80, print "Over speeding", otherwise print "Normal speed".
 console.log(`
 // ===========================================
 // Task 05
-// Check whether a number is positive,
-// negative, or zero using if...else.
-// =========================================== `);
-
-let number = -5;
-
-console.log(`
-let number = -5;
-
-if (number > 0) {
-  console.log(\` 📈 The Number \${number} is positive\`);
-} else if (number < 0) {
-  console.log(\`📉 The Number \${number} is negative\`);
-} else {
-  console.log(\`0️⃣ The Number is zero\`);
-}
-`);
-
-if (number > 0) {
-  console.log(`=> 📈 The Number ${number} is positive`);
-} else if (number < 0) {
-  console.log(`=> 📉 The Number ${number} is negative`);
-} else {
-  console.log(`=> 0️⃣ The Number is zero`);
-}
-
-console.log();
-
-console.log(
-  "We also use, the built-in Math.sign() method returns a specific value indicating the sign. 1  → Positive number, -1  → Negative number, 0  → Positive zero (+0), -0  → Negative zero (-0), NaN → Value is not a number",
-);
-
-console.log(`
-console.log(\`Math.sign(-17):\`, Math.sign(-17));
-console.log(\`Math.sign(10):\`, Math.sign(10));
-console.log(\`Math.sign(0):\`, Math.sign(0));
-console.log(\`Math.sign(-0):\`, Math.sign(-0));
-console.log(\`Math.sign("Hello"):\`, Math.sign("Hello"));
-`);
-
-console.log(`=> Math.sign(-17):`, Math.sign(-17)); // -1
-console.log(`=> Math.sign(10):`, Math.sign(10)); // 1
-console.log(`=> Math.sign(0):`, Math.sign(0)); // 0
-console.log(`=> Math.sign(-0):`, Math.sign(-0)); // -0
-console.log(`=> Math.sign("Hello"):`, Math.sign("Hello")); // NaN
-
-console.log();
-
-console.log(
-  "For clean, single-line returns, a nested ternary operator handles all three states efficiently. It's a concise way to write if...else conditions.",
-);
-
-console.log(`
-const result =
-  number > 0
-    ? \`The number \${number} is positive.\`
-    : number < 0
-      ? \`The number \${number} is negative.\`
-      : "The number is zero.";    
-`);
-
-const result =
-  number > 0
-    ? `The number ${number} is positive.`
-    : number < 0
-      ? `The number ${number} is negative.`
-      : "The number is zero.";
-
-console.log("=> Using Ternary Operator:", result);
-
-console.log();
-
-// Task 06 - Take a year variable and check whether it is a leap year (hint: year % 4 === 0).
-console.log(`
-// ===========================================
-// Task 06
-// Check whether a year is a leap year.
-// (Using the simplified rule: year % 4 === 0)
-// (Correct leap year algorithm.)
-// ===========================================
-`);
-
-// console.log(typeof ("Year:", year)); // number
-// console.log(typeof ("Year:" + " " + year)); // string
-// console.log(typeof `Year: ${year}`); // string
-// console.log(`Year: ${year}`);
-
-// Option 1 (Recommended): Use a normal string
-/* console.log(
-  "if (year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0)) {\n" +
-    "  console.log(`${year} is a leap year.`);\n" +
-    "} else {\n" +
-    "  console.log(`${year} is not a leap year.`);\n" +
-    "}",
-); */
-
-console.log(
-  "A year is a leap year if: It is divisible by 400, or It is divisible by 4 and not divisible by 100.",
-);
-
-// Option 2: Escape the ${} (Best if you want to use a template literal)
-console.log(`
-const year = new Date().getFullYear();
-console.log("This Year is:", year);
-
-if (year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0)) {
-  console.log(\`📅 Year \${year} is a leap year.\`);
-} else {
-  console.log(\`📅 Year \${year} is not a leap year.\`);
-}
-`);
-
-const year = new Date().getFullYear();
-console.log("=> This Year is:", year);
-
-if (year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0)) {
-  console.log(`=> 📅 Year ${year} is a leap year.`);
-} else {
-  console.log(`=> 📅 Year ${year} is not a leap year.`);
-}
-
-console.log();
-
-// Task 07 - Take a speed variable. If speed is greater than 80, print "Over speeding", otherwise print "Normal speed".
-console.log(`
-// ===========================================
-// Task 07
 // Check the vehicle's speed.
 // If the speed is greater than 80,
 // print "Over speeding".
@@ -391,10 +266,10 @@ if (speed > 80) {
 
 console.log();
 
-// Task 08 - Using age and hasTicket, print "Entry allowed" if age is above 18 AND the person has a ticket (use &&).
+// Task 06 - Using age and hasTicket, print "Entry allowed" if age is above 18 AND the person has a ticket (use &&).
 console.log(`
 // ===========================================
-// Task 08
+// Task 06
 // If the person's age is 18 or above
 // AND they have a ticket,
 // print "Entry allowed".
@@ -425,10 +300,10 @@ if (age >= 18 && hasTicket) {
 
 console.log();
 
-// Task 09 - Using isWeekend and isHoliday, print "No work today" if either one is true (use ||).
+// Task 07 - Using isWeekend and isHoliday, print "No work today" if either one is true (use ||).
 console.log(`
 // ===========================================
-// Task 09
+// Task 07
 // If it is a weekend or a holiday,
 // print "No work today".
 // (Use the logical OR operator ||)
@@ -456,10 +331,139 @@ if (isWeekend || isHoliday) {
 
 console.log();
 
-// Task 10 - Build a simple login system — print "Login successful" only if both username and password are correct.
+console.log(`
+/**
+ * ===========================================
+ * 📖 Ternary Operator
+ * ===========================================
+ *
+ * The ternary operator (? :) is a shorthand
+ * way to write a simple if...else statement.
+ * 
+ * It evaluates a condition.
+ * - If the condition is true, it returns the
+ *   first value. 
+ * - If the condition is false, it returns the 
+ *   second value.
+ *  
+ * Syntax: condition ? valueIfTrue : valueIfFalse;
+ *  
+ * When to use the ternary operator 
+ * ✅ For simple if...else conditions. 
+ * ✅ When assigning a value based on a condition. 
+ * ✅ To make code shorter and cleaner. 
+ * 
+ * When not to use it 
+ * Avoid using the ternary operator for complex logic with many conditions. 
+ * In those cases, if...else if...else is easier to read.
+ * 
+ * ===========================================
+ */ `);
+
+// Task 08 - Using age, determine "Adult" or "Minor" using the ternary operator.
+console.log(`
+// ===========================================
+// Task 08
+// Determine whether a person is an
+// "Adult" or "Minor" using the
+// ternary operator.
+// =========================================== `);
+
+const userAge = 13;
+
+console.log(`
+const userAge = 13;
+
+const ageStatus =
+  userAge >= 18 ? \`🧑 Age \${userAge} is Adult.\` : \`🧑 Age \${userAge} is Minor.\`;
+
+console.log(ageStatus); \n `);
+
+const ageStatus =
+  userAge >= 18 ? `🧑 Age ${userAge} is Adult.` : `🧑 Age ${userAge} is Minor.`;
+
+console.log("=>", ageStatus);
+
+console.log();
+
+// Task 09 - If the price is greater than 1000, print "Expensive", otherwise "Affordable" — write this using a ternary operator.
+console.log(`
+// ===========================================
+// Task 09
+// Check whether a product is
+// "Expensive" or "Affordable"
+// using the ternary operator.
+// =========================================== `);
+
+const price = 120;
+
+console.log(`
+const price = 120;
+
+const priceCategory =
+  price > 1000
+    ? \`💰 Price: \${price} → Expensive.\`
+    : \`🛒 Price: \${price} → Affordable.\`;
+
+console.log(priceCategory); \n `);
+
+const priceCategory =
+  price > 1000
+    ? `💰 Price: ${price} → Expensive.`
+    : `🛒 Price: ${price} → Affordable.`;
+
+console.log("=>", priceCategory);
+
+console.log();
+
+// Task 10 - Determine whether a number is even or odd using the ternary operator.
+console.log(`
+// ===========================================
+// Task 10
+// Determine whether a number is even or odd
+// using the ternary operator.
+// =========================================== `);
+
+// Using If...else
+const evenOrOddNumber = 23;
+
+console.log(`
+// Using If...else
+const evenOrOddNumber = 23;
+
+if (evenOrOddNumber % 2 === 0) {
+  console.log(\`🔢 \${evenOrOddNumber} is an even number.\`);
+} else {
+  console.log(\`🔢 \${evenOrOddNumber} is an odd number.\`);
+} \n `);
+
+if (evenOrOddNumber % 2 === 0) {
+  console.log(`=> 🔢 ${evenOrOddNumber} is an even number.`);
+} else {
+  console.log(`=> 🔢 ${evenOrOddNumber} is an odd number.`);
+}
+
+// using Ternary Operator
+const randomNumber = 16;
+
+console.log(`
+// using Ternary Operator
+const randomNumber = 16;
+
+const evenOrOddResult = randomNumber % 2 === 1 ? "odd number." : "even number.";
+console.log(\`🔢 \${randomNumber} is an\`, evenOrOddResult); \n `);
+
+const evenOrOddResult = randomNumber % 2 === 1 ? "odd number." : "even number.";
+console.log(`=> 🔢 ${randomNumber} is an`, evenOrOddResult);
+
+console.log();
+
+/* ===== Intermediate Problem ===== */
+
+// Task 11 - Build a simple login system — print "Login successful" only if both username and password are correct.
 console.log(`
 // ======================================
-// Task 10
+// Task 11
 // Build a simple login system.
 // Print "Login successful" only if both
 // the username and password are correct.
@@ -496,91 +500,6 @@ if (username === correctUsername && password === correctPassword) {
 }
 
 console.log();
-
-// Task 11 - Build a grading system using a marks variable (A+, A, B, C, F) — it must have at least 5 condition branches.
-console.log(`
-// ==============================================
-// Task 11
-// Build a grading system using a marks variable.
-// Grades:
-// A+ : 80 - 100
-// A  : 70 - 79
-// B  : 60 - 69
-// C  : 50 - 59
-// F  : 0 - 49
-// ============================================= `);
-
-const marks = 85;
-
-console.log(`
-const marks = 85;
-
-if (marks >= 80 && marks <= 100) {
-  console.log(\`🎉 Marks: \${marks} → Grade: A+\`);
-} else if (marks >= 70) {
-  console.log(\`🎉 Marks: \${marks} → Grade: A\`);
-} else if (marks >= 60) {
-  console.log(\`👍 Marks: \${marks} → Grade: B\`);
-} else if (marks >= 50) {
-  console.log(\`🙂 Marks: \${marks} → Grade: C\`);
-} else if (marks >= 0) {
-  console.log(\`😢 Marks: \${marks} → Grade: F\`);
-} else {
-  console.log("❌ Invalid marks! Please enter a value between 0 and 100.");
-}
-`);
-
-if (marks >= 80 && marks <= 100) {
-  console.log(`=> 🎉 Marks: ${marks} → Grade: A+`);
-} else if (marks >= 70) {
-  console.log(`=> 🎉 Marks: ${marks} → Grade: A`);
-} else if (marks >= 60) {
-  console.log(`=> 👍 Marks: ${marks} → Grade: B`);
-} else if (marks >= 50) {
-  console.log(`=> 🙂 Marks: ${marks} → Grade: C`);
-} else if (marks >= 0) {
-  console.log(`=> 😢 Marks: ${marks} → Grade: F`);
-} else {
-  console.log("=> ❌ Invalid marks! Please enter a value between 0 and 100.");
-}
-
-console.log();
-
-// Using ternary operator
-const studentMarks = 75;
-
-console.log(`
-// Using ternary operator
-const studentMarks = 75;
-
-const studentResults =
-  studentMarks >= 80 && studentMarks <= 100
-    ? "Grade: A+"
-    : studentMarks >= 70
-      ? "Grade: A"
-      : studentMarks >= 60
-        ? "Grade: B"
-        : studentMarks >= 50
-          ? "Grade: C"
-          : studentMarks >= 0
-            ? "Grade: F"
-            : "❌ Invalid marks! Please enter a value between 0 and 100.";
-`);
-
-const studentResults =
-  studentMarks >= 80 && studentMarks <= 100
-    ? "Grade: A+"
-    : studentMarks >= 70
-      ? "Grade: A"
-      : studentMarks >= 60
-        ? "Grade: B"
-        : studentMarks >= 50
-          ? "Grade: C"
-          : studentMarks >= 0
-            ? "Grade: F"
-            : "❌ Invalid marks! Please enter a value between 0 and 100.";
-
-console.log(`=> Marks: ${studentMarks} -`, studentResults);
 
 // Task 12 - Using a bmi variable, determine the category — Underweight, Normal, Overweight, Obese (use if-else if).
 console.log(`
@@ -741,7 +660,6 @@ if (bangladeshSeasonMonth === 12 || bangladeshSeasonMonth === 1) {
 
 console.log();
 
-// Task 14 - Using age and hasID, use nested if-else to check whether someone is eligible to vote.
 console.log(`
 /**
  * ===========================================
@@ -770,6 +688,7 @@ console.log(`
  *  ===========================================
  */ `);
 
+// Task 14 - Using age and hasID, use nested if-else to check whether someone is eligible to vote.
 console.log(`
 // ===========================================
 // Task 14
@@ -843,134 +762,967 @@ if (isLoggedIn) {
 
 console.log();
 
-// Task 16 - Determine whether a number is even or odd using the ternary operator.
-console.log(`
-/**
- * ===========================================
- * 📖 Ternary Operator
- * ===========================================
- *
- * The ternary operator (? :) is a shorthand
- * way to write a simple if...else statement.
- * 
- * It evaluates a condition.
- * - If the condition is true, it returns the
- *   first value. 
- * - If the condition is false, it returns the 
- *   second value.
- *  
- * Syntax: condition ? valueIfTrue : valueIfFalse;
- *  
- * When to use the ternary operator 
- * ✅ For simple if...else conditions. 
- * ✅ When assigning a value based on a condition. 
- * ✅ To make code shorter and cleaner. 
- * 
- * When not to use it 
- * Avoid using the ternary operator for complex logic with many conditions. 
- * In those cases, if...else if...else is easier to read.
- * 
- * ===========================================
- */ `);
-
+// Task 16 - Take a number variable and check whether it is positive or negative (using if-else).
 console.log(`
 // ===========================================
 // Task 16
-// Determine whether a number is even or odd
-// using the ternary operator.
+// Check whether a number is
+// Positive, Negative, or Zero.
 // =========================================== `);
 
-// Using If...else
-const evenOrOddNumber = 23;
+const number = -5;
 
 console.log(`
-// Using If...else
-const evenOrOddNumber = 23;
+===== Variable Declaration =====
 
-if (evenOrOddNumber % 2 === 0) {
-  console.log(\`🔢 \${evenOrOddNumber} is an even number.\`);
-} else {
-  console.log(\`🔢 \${evenOrOddNumber} is an odd number.\`);
-} \n `);
+const number = -5
 
-if (evenOrOddNumber % 2 === 0) {
-  console.log(`=> 🔢 ${evenOrOddNumber} is an even number.`);
+=============================== `);
+
+console.log(`
+// Solution 1 — Using if...else if...else
+
+if (number > 0) {
+  console.log(\` 📈 The Number \${number} is a positive\`);
+} else if (number < 0) {
+  console.log(\`📉 The Number \${number} is a negative\`);
 } else {
-  console.log(`=> 🔢 ${evenOrOddNumber} is an odd number.`);
+  console.log(\`0️⃣ The Number is zero\`);
 }
+`);
 
-// using Ternary Operator
-const randomNumber = 16;
-
-console.log(`
-// using Ternary Operator
-const randomNumber = 16;
-
-const evenOrOddResult = randomNumber % 2 === 1 ? "odd number." : "even number.";
-console.log(\`🔢 \${randomNumber} is an\`, evenOrOddResult); \n `);
-
-const evenOrOddResult = randomNumber % 2 === 1 ? "odd number." : "even number.";
-console.log(`=> 🔢 ${randomNumber} is an`, evenOrOddResult);
+// Solution 1 — Using if...else if...else
+if (number > 0) {
+  console.log(`=> 📈 The Number ${number} is a positive`);
+} else if (number < 0) {
+  console.log(`=> 📉 The Number ${number} is a negative`);
+} else {
+  console.log(`=> 0️⃣ The Number is zero`);
+}
 
 console.log();
 
-// Task 17 - Using age, determine "Adult" or "Minor" using the ternary operator.
+console.log(`
+// Solution 2 — Using Nested if
+
+if (number >= 0) {
+  if (number === 0) {
+    console.log(\`⚪ \${number} is Zero.\`);
+  } else {
+    console.log(\`✅ \${number} is a Positive Number.\`);
+  }
+} else {
+  console.log(\`❌ \${number} is a Negative Number.\`);
+}
+`);
+
+// Solution 2 — Using Nested if
+if (number >= 0) {
+  if (number === 0) {
+    console.log(`=> ⚪ ${number} is Zero.`);
+  } else {
+    console.log(`=> ✅ ${number} is a Positive Number.`);
+  }
+} else {
+  console.log(`=> ❌ ${number} is a Negative Number.`);
+}
+
+console.log();
+
+console.log(`
+// Solution 3 — Using the Ternary Operator. It's a concise way to write if...else conditions.
+
+const result =
+  number > 0
+    ? \`The number \${number} is a positive.\`
+    : number < 0
+      ? \`The number \${number} is a negative.\`
+      : "The number is zero.";    
+`);
+
+// Solution 3 — Using the Ternary Operator. It's a concise way to write if...else conditions.
+const result =
+  number > 0
+    ? `The number ${number} is a positive.`
+    : number < 0
+      ? `The number ${number} is a negative.`
+      : "The number is zero.";
+
+console.log("=> Using Ternary Operator:", result);
+
+console.log();
+
+console.log(`
+// Solution 4 — Using Math.sign()
+
+const sign = Math.sign(number);
+
+if (sign === 1) {
+    console.log(\`✅ \${number} is a Positive Number.\`);
+} else if (sign === -1) {
+  console.log(\`❌ \${number} is a Negative Number.\`);
+} else {
+  console.log(\`⚪ \${number} is Zero.\`);
+}  
+`);
+
+// Solution 4 — Using Math.sign()
+const sign = Math.sign(number);
+
+if (sign === 1) {
+  console.log(`=> ✅ ${number} is a Positive Number.`);
+} else if (sign === -1) {
+  console.log(`=> ❌ ${number} is a Negative Number.`);
+} else {
+  console.log(`=> ⚪ ${number} is Zero.`);
+}
+
+console.log();
+
+console.log(`
+// Solution 5 — Using switch with Math.sign()
+
+switch (Math.sign(number)) {
+  case 1:
+      console.log(\`✅ \${number} is a Positive Number.\`);
+    break;
+
+  case -1:
+    console.log(\`❌ \${number} is a Negative Number.\`);
+    break;
+
+  default:
+    console.log(\`⚪ \${number} is Zero.\`);
+}  
+`);
+
+// Solution 5 — Using switch with Math.sign()
+switch (Math.sign(number)) {
+  case 1:
+    console.log(`=> ✅ ${number} is a Positive Number.`);
+    break;
+
+  case -1:
+    console.log(`=> ❌ ${number} is a Negative Number.`);
+    break;
+
+  default:
+    console.log(`=> ⚪ ${number} is Zero.`);
+}
+
+console.log();
+
+console.log(`
+// Solution 6 — Using Separate if Statements
+
+if (number > 0) console.log(\`✅ \${number} is a Positive Number.\`);
+if (number < 0) console.log(\`❌ \${number} is a Negative Number.\`);
+if (number === 0) console.log(\`⚪ \${number} is Zero.\`);
+`);
+
+// Solution 6 — Using Separate if Statements
+if (number > 0) console.log(`=> ✅ ${number} is a Positive Number.`);
+if (number < 0) console.log(`=> ❌ ${number} is a Negative Number.`);
+if (number === 0) console.log(`=> ⚪ ${number} is Zero.`);
+
+console.log();
+
+console.log(`
+// Math.sign() is a built-in JavaScript method that returns the sign of a number.
+
+console.log(\`Math.sign(10):\`, Math.sign(10));
+console.log(\`Math.sign(-17):\`, Math.sign(-17));
+console.log(\`Math.sign(0):\`, Math.sign(0));
+console.log(\`Math.sign(-0):\`, Math.sign(-0));
+console.log(\`Math.sign(""25):\`, Math.sign("25"));
+console.log(\`Math.sign("Hello"):\`, Math.sign("Hello"));
+`);
+
+console.log(`=> Math.sign(10):`, Math.sign(10)); // 1
+console.log(`=> Math.sign(-17):`, Math.sign(-17)); // -1
+console.log(`=> Math.sign(0):`, Math.sign(0)); // 0
+console.log(`=> Math.sign(-0):`, Math.sign(-0)); // -0
+console.log(Math.sign("25")); // 1 (string converted to number)
+console.log(`=> Math.sign("Hello"):`, Math.sign("Hello")); // NaN
+
+console.log();
+
+// Task 17 - Take three number variable and check whether Largest of Three Numbers (Challenge: Don't use Math.max()).
+
 console.log(`
 // ===========================================
 // Task 17
-// Determine whether a person is an
-// "Adult" or "Minor" using the
-// ternary operator.
+// Find the Largest of Three Numbers
+// (Challenge: Don't use Math.max())
 // =========================================== `);
 
-const userAge = 13;
+const number1 = 15;
+const number2 = 25;
+const number3 = 10;
 
 console.log(`
-const userAge = 13;
+===== Variable Declaration =====
 
-const ageStatus =
-  userAge >= 18 ? \`🧑 Age \${userAge} is Adult.\` : \`🧑 Age \${userAge} is Minor.\`;
+const number1 = 15;
+const number2 = 25;
+const number3 = 10;
 
-console.log(ageStatus); \n `);
+=============================== `);
 
-const ageStatus =
-  userAge >= 18 ? `🧑 Age ${userAge} is Adult.` : `🧑 Age ${userAge} is Minor.`;
+console.log(`
+// Using if...else if...else
 
-console.log("=>", ageStatus);
+if (number1 >= number2 && number1 >= number3) {
+  console.log(\`🏆 Largest number using if...else if...else: \${number1}\`);
+} else if (number2 >= number3 && number2 >= number1) {
+  console.log(\`🏆 Largest number using if...else if...else: \${number2}\`);
+} else {
+  console.log(\`🏆 Largest number using if...else if...else: \${number3}\`);
+} \n `);
+
+// Using if...else if...else
+if (number1 >= number2 && number1 >= number3) {
+  console.log(`=> 🏆 Largest number using if...else if...else: ${number1}`);
+} else if (number2 >= number3 && number2 >= number1) {
+  console.log(`=> 🏆 Largest number using if...else if...else: ${number2}`);
+} else {
+  console.log(`=> 🏆 Largest number using if...else if...else: ${number3}`);
+}
 
 console.log();
 
-// Task 18 - If the price is greater than 1000, print "Expensive", otherwise "Affordable" — write this using a ternary operator.
+console.log(`
+// Using Nested if
+
+if (number1 >= number2) {
+  if (number1 >= number3) {
+    console.log(\`🏆 Largest number using nested if: \${number1}\`);
+  } else {
+    console.log(\`🏆 Largest number using nested if: \${number3}\`);
+  }
+} else {
+  if (number2 >= number3) {
+    console.log(\`🏆 Largest number using nested if: \${number2}\`);
+  } else {
+    console.log(\`🏆 Largest number using nested if: \${number3}\`);
+  }
+} \n `);
+
+// Using Nested if
+if (number1 >= number2) {
+  if (number1 >= number3) {
+    console.log(`=> 🏆 Largest number using nested if: ${number1}`);
+  } else {
+    console.log(`=> 🏆 Largest number using nested if: ${number3}`);
+  }
+} else {
+  if (number2 >= number3) {
+    console.log(`=> 🏆 Largest number using nested if: ${number2}`);
+  } else {
+    console.log(`=> 🏆 Largest number using nested if: ${number3}`);
+  }
+}
+
+console.log();
+
+console.log(`
+// Using the Ternary Operator
+
+const highest =
+  number1 >= number2 && number1 >= number3
+    ? number1
+    : number2 >= number1 && number2 >= number3
+      ? number2
+      : number3;
+
+console.log(\`🏆 Largest number using ternary operator: \${highest}\`); \n `);
+
+// Using the Ternary Operator
+const highest =
+  number1 >= number2 && number1 >= number3
+    ? number1
+    : number2 >= number1 && number2 >= number3
+      ? number2
+      : number3;
+
+console.log(`=> 🏆 Largest number using ternary operator: ${highest}`);
+
+console.log();
+
+console.log(`
+// Compare Step by Step
+
+let maximum = number1;
+
+if (number2 > maximum) {
+  maximum = number2;
+}
+
+if (number3 > maximum) {
+  maximum = number3;
+}
+
+console.log(\`🏆 Largest number compare step by step: \${maximum}\`); \n `);
+
+// Compare Step by Step
+let maximum = number1;
+
+if (number2 > maximum) {
+  maximum = number2;
+}
+
+if (number3 > maximum) {
+  maximum = number3;
+}
+
+console.log(`=> 🏆 Largest number compare step by step: ${maximum}`);
+
+console.log();
+
+console.log(`
+// Store Result in a Variable
+let highestValue;
+
+if (number1 >= number2 && number1 >= number3) {
+  highestValue = number1;
+} else if (number2 >= number1 && number2 >= number2) {
+  highestValue = number2;
+} else {
+  highestValue = number3;
+}
+
+console.log(\`🏆 Largest number store result in a variable: \${highestValue}\`); \n `);
+
+// Store Result in a Variable
+let highestValue;
+
+if (number1 >= number2 && number1 >= number3) {
+  highestValue = number1;
+} else if (number2 >= number1 && number2 >= number2) {
+  highestValue = number2;
+} else {
+  highestValue = number3;
+}
+
+console.log(`=> 🏆 Largest number store result in a variable: ${highestValue}`);
+
+console.log();
+
+console.log(`
+// JavaScript provides a built-in method called Math.max() that returns the largest value from a list of numbers.
+
+console.log("Largest Number is:", Math.max(20, 45, 7)); // 45
+console.log("Largest Number is:", Math.max(-5, -2, -10)); // -2
+console.log("Largest Number is:", Math.max(100, 100, 50)); // 100
+console.log("Smallest Number is:", Math.min(100, 100, 50)); // 50 \n `);
+
+// JavaScript provides a built-in method called Math.max() that returns the largest value from a list of numbers.
+console.log("=> Largest Number is:", Math.max(20, 45, 7)); // 45
+console.log("=> Largest Number is:", Math.max(-5, -2, -10)); // -2
+console.log("=> Largest Number is:", Math.max(100, 100, 50)); // 100
+console.log("=> Smallest Number is:", Math.min(100, 100, 50)); // 50
+
+console.log(`
+const largest = Math.max(number1, number2, number3);
+console.log(\`🏆 Largest number using Math.max() method: \${largest}\`); \n `);
+
+const largest = Math.max(number1, number2, number3);
+console.log(`=> 🏆 Largest number using Math.max() method: ${largest}`);
+
+console.log();
+
+// Write a JavaScript program that displays the largest integer among two integers.
+const num1 = 10;
+const num2 = 10;
+
+console.log(`
+// Write a JavaScript program that displays the largest integer among two integers.
+const num1 = 10;
+const num2 = 10;
+
+if (num1 > num2) {
+  console.log(\`The larger number of between \${num1} and \${num2} is - \${num1}.\`);
+} else if (num1 < num2) {
+  console.log(\`The larger number of between \${num1} and \${num2} is - \${num2}.\`);
+} else {
+  console.log(\`The values of \${num1} and \${num2} are equal.\`);
+}  
+`);
+
+if (num1 > num2) {
+  console.log(
+    `=> The larger number of between ${num1} and ${num2} is - ${num1}.`,
+  );
+} else if (num1 < num2) {
+  console.log(
+    `=> The larger number of between ${num1} and ${num2} is - ${num2}.`,
+  );
+} else {
+  console.log(`=> The values of ${num1} and ${num2} are equal.`);
+}
+
+console.log();
+
+// Task 18 - Take a year variable and check whether it is a leap year (hint: year % 4 === 0).
 console.log(`
 // ===========================================
 // Task 18
-// Check whether a product is
-// "Expensive" or "Affordable"
-// using the ternary operator.
-// =========================================== `);
+// Check whether a year is a leap year.
+// (Using the simplified rule: year % 4 === 0)
+// (Correct leap year algorithm.)
+// ===========================================
+`);
 
-const price = 120;
+// console.log(typeof ("Year:", year)); // number
+// console.log(typeof ("Year:" + " " + year)); // string
+// console.log(typeof `Year: ${year}`); // string
+// console.log(`Year: ${year}`);
 
+// Option 1 (Recommended): Use a normal string
+/* console.log(
+  "if (year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0)) {\n" +
+    "  console.log(`${year} is a leap year.`);\n" +
+    "} else {\n" +
+    "  console.log(`${year} is not a leap year.`);\n" +
+    "}",
+); */
+
+// Option 2: Escape the ${} (Best if you want to use a template literal)
 console.log(`
-const price = 120;
+// A year is a leap year if: It is divisible by 400, or It is divisible by 4 and not divisible by 100
 
-const priceCategory =
-  price > 1000
-    ? \`💰 Price: \${price} → Expensive.\`
-    : \`🛒 Price: \${price} → Affordable.\`;
+const year = new Date().getFullYear();
+console.log("This Year is:", year);
 
-console.log(priceCategory); \n `);
+// Using Logical Operators (&& and ||)
+if (year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0)) {
+  console.log(\`📅 Year \${year} is a leap year.\`);
+} else {
+  console.log(\`📅 Year \${year} is not a leap year.\`);
+}
 
-const priceCategory =
-  price > 1000
-    ? `💰 Price: ${price} → Expensive.`
-    : `🛒 Price: ${price} → Affordable.`;
+// Store the Condition in a Variable
+const isLeapYear = year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0)
 
-console.log("=>", priceCategory);
+if (isLeapYear) {
+  console.log(\`📅 Year \${year} is a leap year.\`);
+} else {
+  console.log(\`📅 Year \${year} is not a leap year.\`);
+}
+`);
+
+const year = new Date().getFullYear();
+console.log("=> This Year is:", year);
+
+if (year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0)) {
+  console.log(`=> 📅 Year ${year} is a leap year.`);
+} else {
+  console.log(`=> 📅 Year ${year} is not a leap year.`);
+}
 
 console.log();
 
-// Task 19 - Using hasPermission, use the ! operator to print "Access Denied" if permission is not granted.
+// Using if...else if...else
+const checkLeapYear = 1900;
+
+console.log(`
+// Using if...else if...else
+const checkLeapYear = 1900;
+
+if (checkLeapYear % 400 === 0) {
+  console.log(\`📅 \${checkLeapYear} is a Leap Year.\`);
+} else if (checkLeapYear % 100 === 0) {
+  console.log(\`📅 \${checkLeapYear} is Not a Leap Year.\`);
+} else if (checkLeapYear % 4 === 0) {
+  console.log(\`📅 \${checkLeapYear} is a Leap Year.\`);
+} else {
+  console.log(\`📅 \${checkLeapYear} is Not a Leap Year.\`);
+} \n `);
+
+if (checkLeapYear % 400 === 0) {
+  console.log(`=> 📅 ${checkLeapYear} is a Leap Year.`);
+} else if (checkLeapYear % 100 === 0) {
+  console.log(`=> 📅 ${checkLeapYear} is Not a Leap Year.`);
+} else if (checkLeapYear % 4 === 0) {
+  console.log(`=> 📅 ${checkLeapYear} is a Leap Year.`);
+} else {
+  console.log(`=> 📅 ${checkLeapYear} is Not a Leap Year.`);
+}
+
+console.log();
+
+// Task 19 - Build a grading system using a marks variable (A+, A, B, C, F) — it must have at least 5 condition branches.
+console.log(`
+// ==============================================
+// Task 19
+// Build a grading system using a marks variable.
+// Grades:
+// A+ : 80 - 100
+// A  : 70 - 79
+// B  : 60 - 69
+// C  : 50 - 59
+// F  : 0 - 49
+// ============================================= `);
+
+const marks = 85;
+
+console.log(`
+const marks = 85;
+
+if (marks >= 80 && marks <= 100) {
+  console.log(\`🎉 Marks: \${marks} → Grade: A+\`);
+} else if (marks >= 70) {
+  console.log(\`🎉 Marks: \${marks} → Grade: A\`);
+} else if (marks >= 60) {
+  console.log(\`👍 Marks: \${marks} → Grade: B\`);
+} else if (marks >= 50) {
+  console.log(\`🙂 Marks: \${marks} → Grade: C\`);
+} else if (marks >= 0) {
+  console.log(\`😢 Marks: \${marks} → Grade: F\`);
+} else {
+  console.log("❌ Invalid marks! Please enter a value between 0 and 100.");
+}
+`);
+
+if (marks >= 80 && marks <= 100) {
+  console.log(`=> 🎉 Marks: ${marks} → Grade: A+`);
+} else if (marks >= 70) {
+  console.log(`=> 🎉 Marks: ${marks} → Grade: A`);
+} else if (marks >= 60) {
+  console.log(`=> 👍 Marks: ${marks} → Grade: B`);
+} else if (marks >= 50) {
+  console.log(`=> 🙂 Marks: ${marks} → Grade: C`);
+} else if (marks >= 0) {
+  console.log(`=> 😢 Marks: ${marks} → Grade: F`);
+} else {
+  console.log("=> ❌ Invalid marks! Please enter a value between 0 and 100.");
+}
+
+console.log();
+
+// Using ternary operator
+const studentMarks = 75;
+
+console.log(`
+// Using ternary operator
+const studentMarks = 75;
+
+const studentResults =
+  studentMarks >= 80 && studentMarks <= 100
+    ? "Grade: A+"
+    : studentMarks >= 70
+      ? "Grade: A"
+      : studentMarks >= 60
+        ? "Grade: B"
+        : studentMarks >= 50
+          ? "Grade: C"
+          : studentMarks >= 0
+            ? "Grade: F"
+            : "❌ Invalid marks! Please enter a value between 0 and 100.";
+`);
+
+const studentResults =
+  studentMarks >= 80 && studentMarks <= 100
+    ? "Grade: A+"
+    : studentMarks >= 70
+      ? "Grade: A"
+      : studentMarks >= 60
+        ? "Grade: B"
+        : studentMarks >= 50
+          ? "Grade: C"
+          : studentMarks >= 0
+            ? "Grade: F"
+            : "❌ Invalid marks! Please enter a value between 0 and 100.";
+
+console.log(`=> Marks: ${studentMarks} -`, studentResults);
+
+// Task 20 - Write a JavaScript program that takes the lengths of three sides of a triangle and prints its type.
+console.log(`
+// ===========================================
+// Task 20
+// Take three variables representing the lengths
+// of the sides of a triangle. Determine whether
+// the triangle is:
+//
+// • Equilateral (all three sides are equal)
+// • Isosceles (exactly two sides are equal)
+// • Scalene (all three sides are different)
+// • Invalid Triangle (the given sides cannot
+//   form a valid triangle)
+//
+// Hint:
+// A triangle is valid only if the sum of any
+// two sides is greater than the third side.
+// =========================================== `);
+
+const side1 = 5;
+const side2 = 6;
+const side3 = 7;
+
+console.log(`
+===== Variable Declaration =====
+
+const side1 = 5;
+const side2 = 5;
+const side3 = 5;
+
+A triangle is valid if:
+side1 + side2 > side3
+side1 + side3 > side2
+side2 + side3 > side1
+
+=============================== `);
+
+console.log(`
+// Using Logical Operators (&& and ||) with if...else if...else
+if (
+  side1 + side2 <= side3 ||
+  side1 + side3 <= side2 ||
+  side2 + side3 <= side1
+) {
+  console.log("❌ Invalid Triangle");
+} else if (side1 === side2 && side2 === side3) {
+  console.log("🔺 Equilateral Triangle");
+} else if (side1 === side2 || side1 === side3 || side2 === side3) {
+  console.log("🔺 Isosceles Triangle");
+} else {
+  console.log("🔺 Scalene Triangle");
+} \n `);
+
+// Using Logical Operators (&& and ||) with if...else if...else
+if (
+  side1 + side2 <= side3 ||
+  side1 + side3 <= side2 ||
+  side2 + side3 <= side1
+) {
+  console.log("=> ❌ Invalid Triangle");
+} else if (side1 === side2 && side2 === side3) {
+  console.log("=> 🔺 Equilateral Triangle");
+} else if (side1 === side2 || side1 === side3 || side2 === side3) {
+  console.log("=> 🔺 Isosceles Triangle");
+} else {
+  console.log("=> 🔺 Scalene Triangle");
+}
+
+console.log(`
+// using Nested if
+if (side1 + side2 > side3 && side1 + side3 > side2 && side2 + side3 > side1) {
+  if (side1 === side2 && side2 === side3) {
+    console.log("🔺 Equilateral Triangle");
+  } else if (side1 !== side2 || side1 !== side3 || side2 !== side3) {
+    console.log("🔺 Scalene Triangle");
+  } else {
+    console.log("🔺 Isosceles Triangle");
+  }
+} else {
+  console.log("❌ Invalid Triangle");
+} \n `);
+
+// using Nested if
+if (side1 + side2 > side3 && side1 + side3 > side2 && side2 + side3 > side1) {
+  if (side1 === side2 && side2 === side3) {
+    console.log("=> 🔺 Equilateral Triangle");
+  } else if (side1 !== side2 || side1 !== side3 || side2 !== side3) {
+    console.log("=> 🔺 Scalene Triangle");
+  } else {
+    console.log("=> 🔺 Isosceles Triangle");
+  }
+} else {
+  console.log("=> ❌ Invalid Triangle");
+}
+
+console.log(`
+// Using the Ternary Operator
+const isValid =
+  side1 + side2 > side3 && side1 + side3 > side2 && side2 + side3 > side1;
+
+const triangleType = isValid
+  ? side1 === side2 && side2 === side3
+    ? "🔺 Equilateral Triangle"
+    : side1 === side2 || side1 === side3 || side2 === side3
+      ? "🔺 Isosceles Triangle"
+      : "🔺 Scalene Triangle"
+  : "❌ Invalid Triangle";
+
+console.log(triangleType); \n `);
+
+// Using the Ternary Operator
+const isValid =
+  side1 + side2 > side3 && side1 + side3 > side2 && side2 + side3 > side1;
+
+const triangleType = isValid
+  ? side1 === side2 && side2 === side3
+    ? "🔺 Equilateral Triangle"
+    : side1 === side2 || side1 === side3 || side2 === side3
+      ? "🔺 Isosceles Triangle"
+      : "🔺 Scalene Triangle"
+  : "❌ Invalid Triangle";
+
+console.log("=>", triangleType);
+
+console.log();
+
+/* ===== Hard Problem ===== */
+
+// Task 21 - Write a JavaScript conditional statement to sort three numbers.
+console.log(`
+// ===========================================
+// Task 21
+// Take three number variables and arrange
+// them in ascending (smallest → largest)
+// and descending (largest → smallest)
+// order using conditional statements.
+//
+// Challenge:
+// • Don't use Array.sort()
+// • Don't use loops
+// • Don't use Math.min() or Math.max()
+//
+// Explanation:
+// Compare the numbers one by one and swap
+// their positions whenever they are in the
+// wrong order. After the comparisons, the
+// numbers will be sorted from smallest to
+// largest. To display them in descending
+// order, simply print them in reverse order.
+//
+// Example:
+// Input: 30, 10, 20
+// Ascending : 10, 20, 30
+// Descending: 30, 20, 10
+// =========================================== `);
+
+let sortNumberX = 0;
+let sortNumberY = -1;
+let sortNumberZ = 4;
+
+console.log(`
+===== Variable Declaration =====
+
+let sortNumberX = 0;
+let sortNumberY = -1;
+let sortNumberZ = 4;
+
+=============================== `);
+
+console.log(`
+// Using Logical Operators (&&) with if...else if (nested if)
+
+if (sortNumberX > sortNumberY && sortNumberX > sortNumberZ) {
+  if (sortNumberY > sortNumberZ) {
+    console.log("Descending Order:", sortNumberX, sortNumberY, sortNumberZ);
+  } else {
+    console.log("Descending Order:", sortNumberX, sortNumberZ, sortNumberY);
+  }
+} else if (sortNumberY > sortNumberX && sortNumberY > sortNumberZ) {
+  if (sortNumberX > sortNumberZ) {
+    console.log("Descending Order:", sortNumberY, sortNumberX, sortNumberZ);
+  } else {
+    console.log("Descending Order:", sortNumberY, sortNumberZ, sortNumberX);
+  }
+} else if (sortNumberZ > sortNumberX && sortNumberZ > sortNumberY) {
+  if (sortNumberX > sortNumberY) {
+    console.log("Descending Order:", sortNumberZ, sortNumberX, sortNumberY);
+  } else {
+    console.log("Descending Order:", sortNumberZ, sortNumberY, sortNumberX);
+  }
+} \n `);
+
+// Using Logical Operators (&&) with if...else if (nested if)
+if (sortNumberX > sortNumberY && sortNumberX > sortNumberZ) {
+  if (sortNumberY > sortNumberZ) {
+    console.log("=> Descending Order:", sortNumberX, sortNumberY, sortNumberZ);
+  } else {
+    console.log("=> Descending Order:", sortNumberX, sortNumberZ, sortNumberY);
+  }
+} else if (sortNumberY > sortNumberX && sortNumberY > sortNumberZ) {
+  if (sortNumberX > sortNumberZ) {
+    console.log("=> Descending Order:", sortNumberY, sortNumberX, sortNumberZ);
+  } else {
+    console.log("=> Descending Order:", sortNumberY, sortNumberZ, sortNumberX);
+  }
+} else if (sortNumberZ > sortNumberX && sortNumberZ > sortNumberY) {
+  if (sortNumberX > sortNumberY) {
+    console.log("=> Descending Order:", sortNumberZ, sortNumberX, sortNumberY);
+  } else {
+    console.log("=> Descending Order:", sortNumberZ, sortNumberY, sortNumberX);
+  }
+}
+
+console.log(`
+// Using Nested if (if...else if..else)
+
+if (sortNumberX <= sortNumberY) {
+  if (sortNumberY <= sortNumberZ) {
+    console.log("Ascending Order", sortNumberX, sortNumberY, sortNumberZ);
+  } else if (sortNumberX <= sortNumberZ) {
+    console.log("Ascending Order", sortNumberX, sortNumberZ, sortNumberY);
+  } else {
+    console.log("Ascending Order", sortNumberZ, sortNumberX, sortNumberY);
+  }
+} else {
+  if (sortNumberX <= sortNumberZ) {
+    console.log("Ascending Order", sortNumberY, sortNumberX, sortNumberZ);
+  } else if (sortNumberY <= sortNumberZ) {
+    console.log("Ascending Order", sortNumberY, sortNumberZ, sortNumberX);
+  } else {
+    console.log("Ascending Order", sortNumberZ, sortNumberY, sortNumberX);
+  }
+} \n `);
+
+// Using Nested if (if...else if..else)
+if (sortNumberX <= sortNumberY) {
+  if (sortNumberY <= sortNumberZ) {
+    console.log("=> Ascending Order", sortNumberX, sortNumberY, sortNumberZ);
+  } else if (sortNumberX <= sortNumberZ) {
+    console.log("=> Ascending Order", sortNumberX, sortNumberZ, sortNumberY);
+  } else {
+    console.log("=> Ascending Order", sortNumberZ, sortNumberX, sortNumberY);
+  }
+} else {
+  if (sortNumberX <= sortNumberZ) {
+    console.log("=> Ascending Order", sortNumberY, sortNumberX, sortNumberZ);
+  } else if (sortNumberY <= sortNumberZ) {
+    console.log("=> Ascending Order", sortNumberY, sortNumberZ, sortNumberX);
+  } else {
+    console.log("=> Ascending Order", sortNumberZ, sortNumberY, sortNumberX);
+  }
+}
+
+console.log(`
+// Using Variable Swapping
+// The temporary variable (temp) is used as a temporary storage during swapping.
+
+let temp;
+
+if (sortNumberX > sortNumberY) {
+  temp = sortNumberX;
+  sortNumberX = sortNumberY;
+  sortNumberY = temp;
+}
+
+if (sortNumberX > sortNumberZ) {
+  temp = sortNumberX;
+  sortNumberX = sortNumberZ;
+  sortNumberZ = temp;
+}
+
+if (sortNumberY > sortNumberZ) {
+  temp = sortNumberY;
+  sortNumberY = sortNumberZ;
+  sortNumberZ = temp;
+}
+
+console.log(\`Ascending Order: \${sortNumberX}, \${sortNumberY}, \${sortNumberZ}\`);
+console.log(\`Dscending Order: \${sortNumberZ}, \${sortNumberY}, \${sortNumberX}\`); \n `);
+
+// Using Variable Swapping
+// The temporary variable (temp) is used as a temporary storage during swapping.
+let temp;
+
+if (sortNumberX > sortNumberY) {
+  temp = sortNumberX;
+  sortNumberX = sortNumberY;
+  sortNumberY = temp;
+}
+
+if (sortNumberX > sortNumberZ) {
+  temp = sortNumberX;
+  sortNumberX = sortNumberZ;
+  sortNumberZ = temp;
+}
+
+if (sortNumberY > sortNumberZ) {
+  temp = sortNumberY;
+  sortNumberY = sortNumberZ;
+  sortNumberZ = temp;
+}
+
+console.log(
+  `=> Ascending Order: ${sortNumberX}, ${sortNumberY}, ${sortNumberZ}`,
+);
+console.log(
+  `=> Dscending Order: ${sortNumberZ}, ${sortNumberY}, ${sortNumberX}`,
+);
+
+console.log(`
+// Using if Statements Only
+
+if (sortNumberX > sortNumberY)
+  [sortNumberX, sortNumberY] = [sortNumberY, sortNumberX];
+if (sortNumberX > sortNumberZ)
+  [sortNumberX, sortNumberZ] = [sortNumberZ, sortNumberX];
+if (sortNumberY > sortNumberZ)
+  [sortNumberY, sortNumberZ] = [sortNumberZ, sortNumberY];
+
+console.log("Ascending Order:", sortNumberX, sortNumberY, sortNumberZ);
+console.log("Dscending Order:", sortNumberZ, sortNumberY, sortNumberX); \n `);
+
+// Using if Statements Only
+if (sortNumberX > sortNumberY)
+  [sortNumberX, sortNumberY] = [sortNumberY, sortNumberX];
+if (sortNumberX > sortNumberZ)
+  [sortNumberX, sortNumberZ] = [sortNumberZ, sortNumberX];
+if (sortNumberY > sortNumberZ)
+  [sortNumberY, sortNumberZ] = [sortNumberZ, sortNumberY];
+
+console.log("Ascending Order:", sortNumberX, sortNumberY, sortNumberZ);
+console.log("Dscending Order:", sortNumberZ, sortNumberY, sortNumberX);
+
+console.log(`
+// Using Ternary Operator
+// One nested ternary cannot correctly sort three numbers because sorting requires up to three independent comparisons, not just one decision chain.
+
+sortNumberX > sortNumberY
+  ? ([sortNumberX, sortNumberY] = [sortNumberY, sortNumberX])
+  : null;
+sortNumberX > sortNumberZ
+  ? ([sortNumberX, sortNumberZ] = [sortNumberZ, sortNumberX])
+  : null;
+sortNumberY > sortNumberZ
+  ? ([sortNumberY, sortNumberZ] = [sortNumberZ, sortNumberY])
+  : null;
+
+console.log("Ascending Order:", sortNumberX, sortNumberY, sortNumberZ);
+console.log("Dscending Order:", sortNumberZ, sortNumberY, sortNumberX); \n `);
+
+// Using Ternary Operator
+// One nested ternary cannot correctly sort three numbers because sorting requires up to three independent comparisons, not just one decision chain.
+sortNumberX > sortNumberY
+  ? ([sortNumberX, sortNumberY] = [sortNumberY, sortNumberX])
+  : null;
+sortNumberX > sortNumberZ
+  ? ([sortNumberX, sortNumberZ] = [sortNumberZ, sortNumberX])
+  : null;
+sortNumberY > sortNumberZ
+  ? ([sortNumberY, sortNumberZ] = [sortNumberZ, sortNumberY])
+  : null;
+
+console.log("=> Ascending Order:", sortNumberX, sortNumberY, sortNumberZ);
+console.log("=> Dscending Order:", sortNumberZ, sortNumberY, sortNumberX);
+
+console.log(`
+// Using Math.min() and Math.max()
+
+const smallestOne = Math.min(sortNumberX, sortNumberY, sortNumberZ);
+const largestOne = Math.max(sortNumberX, sortNumberY, sortNumberZ);
+const middleOne =
+  sortNumberX + sortNumberY + sortNumberZ - smallestOne - largestOne;
+
+console.log("Ascending Order:", smallestOne, middleOne, largestOne);
+console.log("Dscending Order:", largestOne, middleOne, smallestOne); \n `);
+
+// Using Math.min() and Math.max()
+const smallestOne = Math.min(sortNumberX, sortNumberY, sortNumberZ);
+const largestOne = Math.max(sortNumberX, sortNumberY, sortNumberZ);
+const middleOne =
+  sortNumberX + sortNumberY + sortNumberZ - smallestOne - largestOne;
+
+console.log("=> Ascending Order:", smallestOne, middleOne, largestOne);
+console.log("=> Dscending Order:", largestOne, middleOne, smallestOne);
+
+console.log();
+
 console.log(`
 /**
  * ===========================================
@@ -1013,6 +1765,18 @@ if (isLoggedIn === false) {
   console.log("🔐 Please log in.");
 } `);
 
+// Task 22 - Using hasPermission, use the ! operator to print "Access Denied" if permission is not granted.
+console.log(`
+// ===========================================
+// Task 22
+// Check whether the user has Permission.
+// If the user permission is not granted,
+// print "Access Denied"
+// using the logical NOT (!) operator.
+// =========================================== `);
+
+const hasPermission = false;
+
 console.log(`
 // if (condition !== true) { not enter inside loop }
 // const hasPermission = true; // (No output)
@@ -1028,18 +1792,16 @@ if (hasPermission === false) {
 }
 `);
 
-const hasPermission = false;
-
 if (!hasPermission) {
   console.log("=> 🚫 Access Denied.");
 }
 
 console.log();
 
-// Task 20 - Using isOnline, use the NOT operator to print "User is offline".
+// Task 23 - Using isOnline, use the NOT operator to print "User is offline".
 console.log(`
 // ===========================================
-// Task 20
+// Task 23
 // Check whether the user is online.
 // If the user is not online,
 // print "User is offline"
@@ -1064,10 +1826,10 @@ if (!isOnline) console.log("=> 📴 User is offline.");
 
 console.log();
 
-// Task 21 - Build a simple discount system: if cart total is above 1000 AND the user is a member, apply a 20% discount; if only above 1000, apply a 10% discount; otherwise, no discount — use logical operators combined with if-else if.
+// Task 24 - Build a simple discount system: if cart total is above 1000 AND the user is a member, apply a 20% discount; if only above 1000, apply a 10% discount; otherwise, no discount — use logical operators combined with if-else if.
 console.log(`
 // ===========================================
-// Task 21
+// Task 24
 // Build a simple discount system.
 // - If the cart total is above 1000 AND the
 //   user is a member, apply a 20% discount.
@@ -1179,10 +1941,10 @@ console.log("\n==================================");
 
 console.log();
 
-// Task 22 - Build a simple login + role-check system that verifies username/password and shows a different message based on admin/user role — combine everything from this module (comparison, logical operators, if-else, ternary)
+// Task 25 - Build a simple login + role-check system that verifies username/password and shows a different message based on admin/user role — combine everything from this module (comparison, logical operators, if-else, ternary)
 console.log(`
 // ===========================================
-// Task 22
+// Task 25
 // Build a simple login + role-check system.
 // Verify username and password, then display
 // a different dashboard based on the user's role.
