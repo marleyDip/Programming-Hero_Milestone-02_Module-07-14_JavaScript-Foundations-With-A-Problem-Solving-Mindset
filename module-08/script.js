@@ -2430,22 +2430,22 @@ if (unitsConsumed <= 50) {
 const totalBillAmount = slab1 + slab2 + slab3 + slab4 + slab5 + slab6;
 
 console.log("╔════════════════════════════════════════════╗");
-console.log("║          🏢 পল্লী বিদ্যুৎ সমিতি বিল           ║");
+console.log("║          🏢 পল্লী বিদ্যুৎ সমিতি বিল          ║");
 console.log("╠════════════════════════════════════════════╣");
-console.log(`║ ⚡ Units Consumed : ${unitsConsumed.toString().padStart(22)} ║`);
+console.log(`║ ⚡ Units Consumed : ${unitsConsumed.toString().padStart(18)} ║`);
 console.log("╟────────────────────────────────────────────╢");
 console.log(
-  `║ 0-50 Units        : ${`৳ ${lifelineSlab.toFixed(2)}`.padStart(22)} ║`,
+  `║ 0-50 Units        : ${`৳ ${lifelineSlab.toFixed(2)}`.padStart(18)} ║`,
 );
-console.log(`║ 0-75 Units        : ${`৳ ${slab1.toFixed(2)}`.padStart(22)} ║`);
-console.log(`║ 76-200 Units      : ${`৳ ${slab2.toFixed(2)}`.padStart(22)} ║`);
-console.log(`║ 201-300 Units     : ${`৳ ${slab3.toFixed(2)}`.padStart(22)} ║`);
-console.log(`║ 301-400 Units     : ${`৳ ${slab4.toFixed(2)}`.padStart(22)} ║`);
-console.log(`║ 401-600 Units     : ${`৳ ${slab5.toFixed(2)}`.padStart(22)} ║`);
-console.log(`║ Above 600 Units   : ${`৳ ${slab6.toFixed(2)}`.padStart(22)} ║`);
+console.log(`║ 0-75 Units        : ${`৳ ${slab1.toFixed(2)}`.padStart(18)} ║`);
+console.log(`║ 76-200 Units      : ${`৳ ${slab2.toFixed(2)}`.padStart(18)} ║`);
+console.log(`║ 201-300 Units     : ${`৳ ${slab3.toFixed(2)}`.padStart(18)} ║`);
+console.log(`║ 301-400 Units     : ${`৳ ${slab4.toFixed(2)}`.padStart(18)} ║`);
+console.log(`║ 401-600 Units     : ${`৳ ${slab5.toFixed(2)}`.padStart(18)} ║`);
+console.log(`║ Above 600 Units   : ${`৳ ${slab6.toFixed(2)}`.padStart(18)} ║`);
 console.log("╠════════════════════════════════════════════╣");
 console.log(
-  `║ 🧾 Total Bill     : ${`৳ ${totalBill.toFixed(2)}`.padStart(22)} ║`,
+  `║ 🧾 Total Bill     : ${`৳ ${totalBill.toFixed(2)}`.padStart(18)} ║`,
 );
 console.log("╚════════════════════════════════════════════╝");
 
