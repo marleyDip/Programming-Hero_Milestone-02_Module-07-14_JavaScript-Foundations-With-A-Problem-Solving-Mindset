@@ -22,37 +22,4 @@
 <img width="812" height="717" alt="image" src="https://github.com/user-attachments/assets/d2433653-2f03-4284-a411-107aa61ec9e2" />
 
 ## Task 26 - ATM Withdrawal. Withdrawal must be a multiple of 100. Balance must be enough. Must keep at least 500 after withdrawal.
-                 Start
-                   │
-                   ▼
-   Input Balance & Withdrawal Amount
-                   │
-                   ▼
- Is amount a multiple of 100?
-                   │
-          ┌────────┴────────┐
-          │                 │
-         No                Yes
-          │                 │
-          ▼                 ▼
- Print Error       Is amount > balance?
-                            │
-                   ┌────────┴────────┐
-                   │                 │
-                  Yes               No
-                   │                 │
-                   ▼                 ▼
-          Insufficient      Remaining Balance
-              Balance         ≥ 500?
-                                   │
-                           ┌───────┴────────┐
-                           │                │
-                          No               Yes
-                           │                │
-                           ▼                ▼
-                Minimum Balance     Withdrawal
-                 Must Remain        Successful
-                           │                │
-                           └────────┬───────┘
-                                    ▼
-                                   End
+<img width="812" height="782" alt="image" src="https://github.com/user-attachments/assets/4afeb954-3679-4cd0-a231-e628723b7ca5" />
