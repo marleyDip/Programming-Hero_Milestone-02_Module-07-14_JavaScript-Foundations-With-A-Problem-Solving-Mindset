@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Module 08 — Conditionals &amp; Decision Making</title>
+    <meta
+      name="description"
+      content="Module 08 practice: conditionals and decision making — comparison operators, if/else, logical operators, ternaries, and nested conditions in JavaScript."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css"
+    />
+
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23f7df1e%22/><text x=%2250%22 y=%2268%22 font-size=%2255%22 font-family=%22monospace%22 font-weight=%22700%22 text-anchor=%22middle%22 fill=%22%231e1e1e%22>JS</text></svg>"
+    />
+
+    <link rel="stylesheet" href="../assets/style.css" />
+  </head>
+
+  <body>
+    <div class="titlebar">
+      <div class="dots">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+      </div>
+      <div class="tab">script.js</div>
+      <a class="back" href="../index.html">← All Modules</a>
+    </div>
+
+    <header>
+      <p class="eyebrow">module/08</p>
+      <h1>Conditionals &amp; <span class="accent">Decision Making</span></h1>
+      <p>
+        30 tasks across three tiers —
+        <span class="diff-label easy">Easy</span> (01–10),
+        <span class="diff-label intermediate">Intermediate</span> (10–20),
+        <span class="diff-label hard">Hard</span> (20–30).
+      </p>
+    </header>
+
+    <div class="panel-tabs" role="tablist">
+      <button
+        class="panel-tab diff-easy active"
+        id="tab-easy"
+        role="tab"
+        aria-selected="true"
+        aria-controls="panel-easy"
+      >
+        <span class="diff-dot"></span>Easy
+      </button>
+
+      <button
+        class="panel-tab diff-intermediate"
+        id="tab-intermediate"
+        role="tab"
+        aria-selected="false"
+        aria-controls="panel-intermediate"
+      >
+        <span class="diff-dot"></span>Intermediate
+      </button>
+
+      <button
+        class="panel-tab diff-hard"
+        id="tab-hard"
+        role="tab"
+        aria-selected="false"
+        aria-controls="panel-hard"
+      >
+        <span class="diff-dot"></span>Hard
+      </button>
+
+      <button
+        class="panel-tab"
+        id="tab-source"
+        role="tab"
+        aria-selected="false"
+        aria-controls="panel-source"
+      >
+        Source
+      </button>
+    </div>
+
+    <div class="panels">
+      <section
+        class="panel active"
+        id="panel-easy"
+        role="tabpanel"
+        aria-labelledby="tab-easy"
+      >
+        <div class="panel-chrome">
+          <div class="chrome-dots">
+            <span style="background: #ff5f56"></span>
+            <span style="background: #ffbd2e"></span>
+            <span style="background: #27c93f"></span>
+          </div>
+
+          <span>node script.js</span>
+          <span>Tasks 01–10</span>
+        </div>
+
+        <div id="terminal-output-easy" class="terminal-output">
+          <div class="term-prompt">node script.js --tasks=01-10</div>
+        </div>
+      </section>
+
+      <section
+        class="panel"
+        id="panel-intermediate"
+        role="tabpanel"
+        aria-labelledby="tab-intermediate"
+      >
+        <div class="panel-chrome">
+          <div class="chrome-dots">
+            <span style="background: #ff5f56"></span>
+            <span style="background: #ffbd2e"></span>
+            <span style="background: #27c93f"></span>
+          </div>
+
+          <span>node script.js</span>
+          <span>Tasks 10–20</span>
+        </div>
+
+        <div id="terminal-output-intermediate" class="terminal-output">
+          <div class="term-prompt">node script.js --tasks=10-20</div>
+        </div>
+      </section>
+
+      <section
+        class="panel"
+        id="panel-hard"
+        role="tabpanel"
+        aria-labelledby="tab-hard"
+      >
+        <div class="panel-chrome">
+          <div class="chrome-dots">
+            <span style="background: #ff5f56"></span>
+            <span style="background: #ffbd2e"></span>
+            <span style="background: #27c93f"></span>
+          </div>
+
+          <span>node script.js</span>
+          <span>Tasks 20–30</span>
+        </div>
+
+        <div id="terminal-output-hard" class="terminal-output">
+          <div class="term-prompt">node script.js --tasks=20-30</div>
+        </div>
+      </section>
+
+      <section
+        class="panel"
+        id="panel-source"
+        role="tabpanel"
+        aria-labelledby="tab-source"
+      >
+        <div class="panel-chrome">
+          <div class="chrome-dots">
+            <span style="background: #ff5f56"></span>
+            <span style="background: #ffbd2e"></span>
+            <span style="background: #27c93f"></span>
+          </div>
+
+          <span>script.js</span>
+          <button class="copy-btn" id="copy-source">Copy</button>
+        </div>
+
+        <div class="source-wrap">
+          <pre><code class="language-javascript" id="source-code"></code></pre>
+        </div>
+      </section>
+    </div>
+
+    <div class="statusbar">
+      <div class="left">
+        <span class="live"><span class="live-dot"></span> ready</span>
+        <span>main</span>
+      </div>
+
+      <div class="right">
+        <span>module 08 / 14</span>
+        <span>UTF-8</span>
+      </div>
+    </div>
+
+    <!-- Static copy of the source, embedded as raw text so the Source tab can display it without relying on fetch() over file:// -->
+    <script src="./source-script.js"></script>
+
+    <script>
+      // Capture console.log output and route each line into the
+      // Easy / Intermediate / Hard panel its task belongs to, while the
+      // real script.js still logs to the real devtools console too.
+      const outputs = {
+        easy: document.getElementById("terminal-output-easy"),
+        intermediate: document.getElementById("terminal-output-intermediate"),
+        hard: document.getElementById("terminal-output-hard"),
+      };
+
+      // Tasks 01–10: comparisons & basic if/else
+      // Tasks 10–20: logical operators, nested if, multi-branch systems
+      // Tasks 20–30: ternaries, NOT operator, combined logic systems
+      function bucketForTask(n) {
+        if (n <= 10) return "easy";
+        if (n <= 20) return "intermediate";
+        return "hard";
+      }
+
+      let currentBucket = "easy";
+      const originalLog = console.log.bind(console);
+
+      console.log = function (...args) {
+        originalLog(...args);
+
+        // Detect a "// Task NN" header printed by the script itself and
+        // switch which panel subsequent lines get routed to.
+        if (typeof args[0] === "string") {
+          const match = args[0].match(/Task\s+0*([0-9]+)/);
+          if (match) currentBucket = bucketForTask(parseInt(match[1], 10));
+        }
+
+        const target = outputs[currentBucket];
+
+        if (args.length === 0) {
+          const blank = document.createElement("div");
+          blank.className = "term-line blank";
+          target.appendChild(blank);
+          return;
+        }
+
+        const line = document.createElement("div");
+        line.className = "term-line";
+        line.textContent = args
+          .map((a) => {
+            if (a === undefined) return "undefined";
+            if (typeof a === "object" && a !== null) return JSON.stringify(a);
+            return String(a);
+          })
+          .join(" ");
+        target.appendChild(line);
+      };
+    </script>
+
+    <script src="./script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <script>
+      // Populate the Source tab from source-script.js
+      const sourceEl = document.getElementById("source-code");
+      sourceEl.textContent = (window.MODULE_SOURCE || "").trim();
+      // sourceEl.textContent = document
+      //   .getElementById("source-text")
+      //   .textContent.trim();
+      if (window.hljs) hljs.highlightElement(sourceEl);
+
+      // Tab switching across 4 tabs
+      const tabs = {
+        easy: document.getElementById("tab-easy"),
+        intermediate: document.getElementById("tab-intermediate"),
+        hard: document.getElementById("tab-hard"),
+        source: document.getElementById("tab-source"),
+      };
+      const panels = {
+        easy: document.getElementById("panel-easy"),
+        intermediate: document.getElementById("panel-intermediate"),
+        hard: document.getElementById("panel-hard"),
+        source: document.getElementById("panel-source"),
+      };
+
+      function activate(name) {
+        Object.keys(tabs).forEach((key) => {
+          const isActive = key === name;
+          tabs[key].classList.toggle("active", isActive);
+          tabs[key].setAttribute("aria-selected", isActive);
+          panels[key].classList.toggle("active", isActive);
+        });
+      }
+
+      Object.keys(tabs).forEach((key) => {
+        tabs[key].addEventListener("click", () => activate(key));
+      });
+
+      // Copy source button
+      document.getElementById("copy-source").addEventListener("click", (e) => {
+        navigator.clipboard.writeText(sourceEl.textContent).then(() => {
+          const btn = e.target;
+          const original = btn.textContent;
+          btn.textContent = "Copied!";
+          setTimeout(() => (btn.textContent = original), 1200);
+        });
+      });
+    </script>
+  </body>
+</html>
+
+<!-- Where n comes from
+
+Your script.js prints a header before each task, like:
+
+console.log(`
+// ===========================================
+// Task 08
+// If the person's age is 18 or above
+...
+`);
+
+That's one big multi-line string passed as args[0]. The harness runs this regex on it:
+
+const match = args[0].match(/Task\s+0*([0-9]+)/);
+
+Breaking that regex down:
+
+=> Task\s+ — matches the literal word Task followed by one or more spaces
+=> 0* — eats any leading zeros (so 08 and 8 both work)
+=> ([0-9]+) — captures the actual digits, e.g. 8
+
+So for that header, match[1] is the string "8".
+
+Turning that into a bucket
+if (match) currentBucket = bucketForTask(parseInt(match[1], 10));
+=> parseInt("8", 10) → the number 8. That gets passed into:
+
+function bucketForTask(n) {
+  if (n <= 7) return "easy";
+  if (n <= 15) return "intermediate";
+  return "hard";
+}
+
+For n = 8: it's not <= 7, so it falls to the next check — 8 <= 15 is true, so it returns "intermediate". currentBucket is now "intermediate".
+
+For reference, across all 22 tasks:
+
+n 1–7 → "easy" (first condition catches it)
+n 8–15 → "intermediate" (skips first check, hits second)
+n 16–22 → "hard" (skips both checks, falls to the final return)
+Why this switch persists
+
+currentBucket is declared once, outside console.log, so it survives between calls — it's not reset each time. Once the regex matches "Task 08" and sets it to "intermediate", every subsequent console.log call (the demo code print, the actual result, blank lines, etc.) gets routed to outputs.intermediate — right up until the next "Task NN" header is spotted and switches it again.
+
+That's the whole trick: it's just watching your own script's output stream for the header text it already prints, and using that as a signal for "which panel do these next few lines belong to." -->

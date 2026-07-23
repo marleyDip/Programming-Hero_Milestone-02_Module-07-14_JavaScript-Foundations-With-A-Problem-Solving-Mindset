@@ -1,0 +1,443 @@
+/* ============================================================
+   Module 07 — style.css
+   Same editor-chrome language as the hub, applied to a page
+   whose real job is to run the student's script and show the
+   real console output next to the real source.
+   ============================================================ */
+
+:root {
+  --bg: #1e1e1e;
+  --bg-panel: #252526;
+  --bg-elevated: #2d2d30;
+  --bg-terminal: #181818;
+  --border: #3c3c3c;
+  --border-soft: #333333;
+
+  --text: #d4d4d4;
+  --text-dim: #8a8a8a;
+  --text-faint: #5a5a5a;
+
+  --accent-yellow: #f7df1e;
+  --accent-blue: #3794ff;
+  --accent-green: #6a9955;
+  --accent-orange: #ce9178;
+
+  --radius: 6px;
+  --font-mono:
+    "JetBrains Mono", "Fira Code", ui-monospace, Menlo, Consolas, monospace;
+  --font-sans:
+    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  --shadow-lift: 0 12px 24px -8px rgba(0, 0, 0, 0.55);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  padding-bottom: 44px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------------- Title bar ---------------- */
+.titlebar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 18px;
+  background: var(--bg-elevated);
+  border-bottom: 1px solid var(--border);
+}
+
+.titlebar .dots {
+  display: flex;
+  gap: 7px;
+  flex-shrink: 0;
+}
+
+.titlebar .dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+
+.dot.red {
+  background: #ff5f56;
+}
+.dot.yellow {
+  background: #ffbd2e;
+}
+.dot.green {
+  background: #27c93f;
+}
+
+.titlebar .tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-soft);
+  border-bottom: none;
+  padding: 6px 14px;
+  border-radius: 5px 5px 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-dim);
+}
+
+.titlebar .tab::before {
+  content: "JS";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: #1e1e1e;
+  background: var(--accent-yellow);
+  border-radius: 3px;
+}
+
+.titlebar .back {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  text-decoration: none;
+  padding: 5px 10px;
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.titlebar .back:hover,
+.titlebar .back:focus-visible {
+  color: var(--accent-yellow);
+  border-color: var(--accent-yellow);
+}
+
+/* ---------------- Header ---------------- */
+header {
+  padding: 48px 24px 32px;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+header .eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--accent-green);
+  margin: 0 0 14px;
+}
+
+header .eyebrow::before {
+  content: "// ";
+  color: var(--text-faint);
+}
+
+header h1 {
+  font-family: var(--font-mono);
+  font-size: clamp(1.7rem, 4.5vw, 2.4rem);
+  font-weight: 700;
+  margin: 0 0 10px;
+  letter-spacing: -0.01em;
+}
+
+header h1 .accent {
+  color: var(--accent-yellow);
+}
+
+header p {
+  font-family: var(--font-mono);
+  font-size: 0.92rem;
+  color: var(--text-dim);
+  margin: 0;
+}
+
+/* ---------------- Tab switcher ---------------- */
+.panel-tabs {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  gap: 8px;
+}
+
+.panel-tab {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  background: var(--bg-panel);
+  border: 1px solid var(--border-soft);
+  border-bottom: none;
+  padding: 9px 18px;
+  border-radius: 6px 6px 0 0;
+  cursor: pointer;
+  transition:
+    color 0.15s ease,
+    background 0.15s ease;
+}
+
+.panel-tab.active {
+  color: var(--accent-yellow);
+  background: var(--bg-terminal);
+}
+
+.panel-tab:hover:not(.active) {
+  color: var(--text);
+}
+
+.panel-tab:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: -2px;
+}
+
+/* ---------------- Panels ---------------- */
+.panels {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 24px 56px;
+}
+
+.panel {
+  display: none;
+  border: 1px solid var(--border-soft);
+  border-radius: 0 var(--radius) var(--radius) var(--radius);
+  background: var(--bg-terminal);
+  overflow: hidden;
+  box-shadow: var(--shadow-lift);
+}
+
+.panel.active {
+  display: block;
+}
+
+.panel-chrome {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 16px;
+  background: var(--bg-elevated);
+  border-bottom: 1px solid var(--border-soft);
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--text-dim);
+}
+
+.panel-chrome .chrome-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.panel-chrome .chrome-dots span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+.panel-chrome button.copy-btn {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  background: transparent;
+  border: 1px solid var(--border-soft);
+  border-radius: 4px;
+  padding: 4px 10px;
+  cursor: pointer;
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.panel-chrome button.copy-btn:hover,
+.panel-chrome button.copy-btn:focus-visible {
+  color: var(--accent-yellow);
+  border-color: var(--accent-yellow);
+}
+
+/* ---------------- Terminal output ---------------- */
+.terminal-output {
+  padding: 18px 20px 24px;
+  font-family: var(--font-mono);
+  font-size: 0.86rem;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.terminal-output .term-prompt {
+  color: var(--accent-green);
+  margin-bottom: 10px;
+}
+
+.terminal-output .term-prompt::before {
+  content: "$ ";
+  color: var(--text-faint);
+}
+
+/* ---------------- Difficulty tabs ---------------- */
+:root {
+  --diff-easy: #89d185;
+  --diff-intermediate: #cca700;
+  --diff-hard: #f14c4c;
+}
+
+.panel-tab .diff-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  margin-right: 7px;
+  background: currentColor;
+  opacity: 0.85;
+}
+
+.panel-tab.diff-easy.active {
+  color: var(--diff-easy);
+}
+.panel-tab.diff-intermediate.active {
+  color: var(--diff-intermediate);
+}
+.panel-tab.diff-hard.active {
+  color: var(--diff-hard);
+}
+
+.panel-tab.diff-easy:hover:not(.active) {
+  color: var(--diff-easy);
+}
+.panel-tab.diff-intermediate:hover:not(.active) {
+  color: var(--diff-intermediate);
+}
+.panel-tab.diff-hard:hover:not(.active) {
+  color: var(--diff-hard);
+}
+
+.diff-label {
+  font-weight: 600;
+}
+
+.diff-label.easy {
+  color: var(--diff-easy);
+}
+.diff-label.intermediate {
+  color: var(--diff-intermediate);
+}
+.diff-label.hard {
+  color: var(--diff-hard);
+}
+
+.term-line {
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: var(--text);
+  padding: 1px 0;
+}
+
+.term-line.blank {
+  height: 0.9em;
+}
+
+/* ---------------- Source panel ---------------- */
+.source-wrap {
+  max-height: 70vh;
+  overflow: auto;
+  margin: 0;
+}
+
+.source-wrap pre {
+  margin: 0;
+}
+
+.source-wrap code {
+  font-family: var(--font-mono) !important;
+  font-size: 0.82rem !important;
+  padding: 20px !important;
+  display: block;
+  background: transparent !important;
+  /* for break word horizontally */
+  white-space: pre-wrap !important;
+  word-break: break-word !important;
+  overflow-wrap: anywhere !important;
+}
+
+/* ---------------- Status bar ---------------- */
+.statusbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 18px;
+  background: var(--accent-blue);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  z-index: 10;
+}
+
+.statusbar .left,
+.statusbar .right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.statusbar .live {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.statusbar .live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #27c93f;
+  animation: pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .statusbar .live-dot {
+    animation: none !important;
+  }
+}
+
+/* ---------------- Responsive ---------------- */
+@media (max-width: 600px) {
+  header {
+    padding: 36px 18px 24px;
+  }
+
+  .panel-tabs,
+  .panels {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .terminal-output,
+  .source-wrap code {
+    font-size: 0.78rem !important;
+  }
+}

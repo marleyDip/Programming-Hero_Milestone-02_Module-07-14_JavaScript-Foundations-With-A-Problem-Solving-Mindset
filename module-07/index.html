@@ -3,29 +3,200 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Module 07 - JavaScript Introduction</title>
+    <title>Module 07 — Introduction to JavaScript</title>
+    <meta
+      name="description"
+      content="Module 07 practice: introduction to JavaScript — variables, data types, arithmetic, and a personal profile mini project."
+    />
 
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css"
+    />
+
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23f7df1e%22/><text x=%2250%22 y=%2268%22 font-size=%2255%22 font-family=%22monospace%22 font-weight=%22700%22 text-anchor=%22middle%22 fill=%22%231e1e1e%22>JS</text></svg>"
+    />
+
+    <link rel="stylesheet" href="../assets/style.css" />
   </head>
 
   <body>
+    <div class="titlebar">
+      <div class="dots">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+      </div>
+      <div class="tab">script.js</div>
+      <a class="back" href="../index.html">← All Modules</a>
+    </div>
+
     <header>
-      <h1>📘 Module 07</h1>
-      <p>Introduction to JavaScript</p>
+      <p class="eyebrow">module/07</p>
+      <h1>Introduction to <span class="accent">JavaScript</span></h1>
+      <p>
+        10 tasks · a mini project · a bonus challenge — variables, data types,
+        arithmetic, and shorthand operators.
+      </p>
     </header>
 
-    <main class="container">
-      <a href="../index.html" class="back-btn"> ← Back to Modules </a>
+    <div class="panel-tabs" role="tablist">
+      <!-- Output Button -->
+      <button
+        class="panel-tab active"
+        id="tab-output"
+        role="tab"
+        aria-selected="true"
+        aria-controls="panel-output"
+      >
+        Output
+      </button>
 
-      <div class="card">
-        <div class="card-header">
-          <h2>Console Output</h2>
+      <!-- Source Code Button -->
+      <button
+        class="panel-tab"
+        id="tab-source"
+        role="tab"
+        aria-selected="false"
+        aria-controls="panel-source"
+      >
+        Source
+      </button>
+    </div>
+
+    <div class="panels">
+      <section
+        class="panel active"
+        id="panel-output"
+        role="tabpanel"
+        aria-labelledby="tab-output"
+      >
+        <div class="panel-chrome">
+          <div class="chrome-dots">
+            <span style="background: #ff5f56"></span>
+            <span style="background: #ffbd2e"></span>
+            <span style="background: #27c93f"></span>
+          </div>
+          <span>node script.js</span>
+          <span></span>
         </div>
 
-        <pre id="output"></pre>
+        <div id="terminal-output" class="terminal-output">
+          <div class="term-prompt">node script.js</div>
+        </div>
+      </section>
+
+      <section
+        class="panel"
+        id="panel-source"
+        role="tabpanel"
+        aria-labelledby="tab-source"
+      >
+        <div class="panel-chrome">
+          <div class="chrome-dots">
+            <span style="background: #ff5f56"></span>
+            <span style="background: #ffbd2e"></span>
+            <span style="background: #27c93f"></span>
+          </div>
+          <span>script.js</span>
+          <button class="copy-btn" id="copy-source">Copy</button>
+        </div>
+
+        <div class="source-wrap">
+          <pre><code class="language-javascript" id="source-code"></code></pre>
+        </div>
+      </section>
+    </div>
+
+    <div class="statusbar">
+      <div class="left">
+        <span class="live"><span class="live-dot"></span> ready</span>
+        <span>main</span>
       </div>
-    </main>
+
+      <div class="right">
+        <span>module 07 / 14</span>
+        <span>UTF-8</span>
+      </div>
+    </div>
+
+    <!-- Static copy of the source, embedded as raw text so the Source tab can display it without relying on fetch() over file:// -->
+    <script src="./source-script.js"></script>
+
+    <script>
+      // Capture console.log output into the terminal panel while the
+      // real script.js still runs and logs to the real devtools console too.
+      const output = document.getElementById("terminal-output");
+      const originalLog = console.log.bind(console);
+
+      console.log = function (...args) {
+        originalLog(...args);
+        if (args.length === 0) {
+          const blank = document.createElement("div");
+          blank.className = "term-line blank";
+          output.appendChild(blank);
+          return;
+        }
+
+        const line = document.createElement("div");
+        line.className = "term-line";
+        line.textContent = args
+          .map((a) => {
+            if (a === undefined) return "undefined";
+            if (typeof a === "object" && a !== null) return JSON.stringify(a);
+            return String(a);
+          })
+          .join(" ");
+        output.appendChild(line);
+      };
+    </script>
 
     <script src="./script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <script>
+      // Populate the Source tab from source-script.js
+      const sourceEl = document.getElementById("source-code");
+      sourceEl.textContent = (window.MODULE_SOURCE || "").trim();
+      if (window.hljs) hljs.highlightElement(sourceEl);
+
+      // Tab switching
+      const tabOutput = document.getElementById("tab-output");
+      const tabSource = document.getElementById("tab-source");
+      const panelOutput = document.getElementById("panel-output");
+      const panelSource = document.getElementById("panel-source");
+
+      function activate(tab) {
+        const isOutput = tab === "output";
+        tabOutput.classList.toggle("active", isOutput);
+        tabSource.classList.toggle("active", !isOutput);
+        tabOutput.setAttribute("aria-selected", isOutput);
+        tabSource.setAttribute("aria-selected", !isOutput);
+        panelOutput.classList.toggle("active", isOutput);
+        panelSource.classList.toggle("active", !isOutput);
+      }
+
+      tabOutput.addEventListener("click", () => activate("output"));
+      tabSource.addEventListener("click", () => activate("source"));
+
+      // Copy source button
+      document.getElementById("copy-source").addEventListener("click", (e) => {
+        navigator.clipboard.writeText(sourceEl.textContent).then(() => {
+          const btn = e.target;
+          const original = btn.textContent;
+          btn.textContent = "Copied!";
+          setTimeout(() => (btn.textContent = original), 1200);
+        });
+      });
+    </script>
   </body>
 </html>
