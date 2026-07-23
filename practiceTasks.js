@@ -2035,3 +2035,965 @@ if (userName === enteredUserName && userPassword === enteredUserPassword) {
 console.log("-----------------------------------");
 
 console.log();
+
+// Task 26 - ATM Withdrawal. Withdrawal must be multiple of 100. Balance must be enough. Must keep at least 500 after withdrawal. Print appropriate messages.
+console.log(`
+// ===========================================
+// Task 26
+// ATM Withdrawal System
+//
+// Create an ATM withdrawal system using
+// two variables: accountBalance and
+// withdrawalAmount.
+//
+// Rules:
+// • The withdrawal amount must be a
+//   multiple of 100.
+// • The withdrawal amount must not exceed
+//   the available account balance.
+// • After the withdrawal, at least 500
+//   must remain in the account.
+// • Print an appropriate success or
+//   failure message for each condition.
+// =========================================== \n `);
+
+const accountBalance = 5000;
+const withdrawalAmount = 3000;
+
+console.log(`
+===== Variable Declaration =====
+
+const accountBalance = 5000;
+const withdrawalAmount = 3000;
+
+=============================== `);
+
+console.log(`
+// Solution 1 - Using if...else if...else
+
+if (withdrawalAmount % 100 !== 0) {
+  console.log("❌ Withdrawal amount must be a multiple of 100.");
+} else if (withdrawalAmount > accountBalance) {
+  console.log("❌ Insufficient account balance.");
+} else if (accountBalance - withdrawalAmount < 500) {
+  console.log("❌ Minimum balance of 500 must remain in the account.");
+} else {
+  const remainingBalance = accountBalance - withdrawalAmount;
+
+  console.log("✅ Withdrawal Successful!");
+  console.log(\`💵 Withdrawn Amount : \${withdrawalAmount}\`);
+  console.log(\`🏦 Remaining Balance: \${remainingBalance}\`);
+} \n `);
+
+// Solution 1 - Using if...else if...else
+if (withdrawalAmount % 100 !== 0) {
+  console.log("=> ❌ Withdrawal amount must be a multiple of 100.");
+} else if (withdrawalAmount > accountBalance) {
+  console.log("=> ❌ Insufficient account balance.");
+} else if (accountBalance - withdrawalAmount < 500) {
+  console.log("=> ❌ Minimum balance of 500 must remain in the account.");
+} else {
+  const remainingBalance = accountBalance - withdrawalAmount;
+
+  console.log("=> ✅ Withdrawal Successful!");
+  console.log(`=> 💵 Withdrawn Amount : ${withdrawalAmount}`);
+  console.log(`=> 🏦 Remaining Balance: ${remainingBalance}`);
+}
+
+console.log(`
+// Solution 2 — Nested if
+
+if (withdrawalAmount % 100 === 0) {
+  if (withdrawalAmount <= accountBalance) {
+    if (accountBalance - withdrawalAmount >= 500) {
+      console.log("✅ Withdrawal Successful!");
+      console.log(\`💵 Withdrawn Amount : \${withdrawalAmount}\`);
+      console.log(\`🏦 Remaining Balance: \${accountBalance - withdrawalAmount}\`);
+    } else {
+      console.log("❌ Minimum balance of 500 must remain in the account.");
+    }
+  } else {
+    console.log("❌ Insufficient account balance.");
+  }
+} else {
+  console.log("❌ Withdrawal amount must be a multiple of 100.");
+} \n `);
+
+// Solution 2 — Nested if
+if (withdrawalAmount % 100 === 0) {
+  if (withdrawalAmount <= accountBalance) {
+    if (accountBalance - withdrawalAmount >= 500) {
+      console.log("=> ✅ Withdrawal Successful!");
+      console.log(`=> 💵 Withdrawn Amount : ${withdrawalAmount}`);
+      console.log(
+        `=> 🏦 Remaining Balance: ${accountBalance - withdrawalAmount}`,
+      );
+    } else {
+      console.log("=> ❌ Minimum balance of 500 must remain in the account.");
+    }
+  } else {
+    console.log("=> ❌ Insufficient account balance.");
+  }
+} else {
+  console.log("=> ❌ Withdrawal amount must be a multiple of 100.");
+}
+
+console.log(`
+// Solution 2 — Store Result in Variables
+
+let message;
+let remainingBalance = accountBalance;
+
+if (withdrawalAmount % 100 !== 0) {
+  message = "❌ Withdrawal amount must be a multiple of 100.";
+} else if (withdrawalAmount > accountBalance) {
+  message = "❌ Insufficient account balance.";
+} else if (accountBalance - withdrawalAmount < 500) {
+  message = "❌ Minimum balance of 500 must remain in the account.";
+} else {
+  remainingBalance -= withdrawalAmount;
+  message = "✅ Withdrawal Successful!";
+}
+
+console.log(message);
+
+if (message === "✅ Withdrawal Successful!") {
+  console.log(\`💵 Withdrawn Amount : \${withdrawalAmount}\`);
+  console.log(\`🏦 Remaining Balance: \${remainingBalance}\`);
+} \n `);
+
+// Solution 2 — Store Result in Variables
+let message;
+let remainingBalance = accountBalance;
+
+if (withdrawalAmount % 100 !== 0) {
+  message = "=> ❌ Withdrawal amount must be a multiple of 100.";
+} else if (withdrawalAmount > accountBalance) {
+  message = "=> ❌ Insufficient account balance.";
+} else if (accountBalance - withdrawalAmount < 500) {
+  message = "=> ❌ Minimum balance of 500 must remain in the account.";
+} else {
+  remainingBalance -= withdrawalAmount;
+  message = "=> ✅ Withdrawal Successful!";
+}
+
+console.log(message);
+
+if (message === "=> ✅ Withdrawal Successful!") {
+  console.log(`=> 💵 Withdrawn Amount : ${withdrawalAmount}`);
+  console.log(`=> 🏦 Remaining Balance: ${remainingBalance}`);
+}
+
+console.log(`
+// Solution 4 — Ternary Operator (Practice)
+
+const balanceResult =
+  withdrawalAmount % 100 === 0
+    ? withdrawalAmount < accountBalance
+      ? accountBalance - withdrawalAmount > 500
+        ? \`✅ Withdrawal Successful!\\n🏦 Remaining Balance: \${accountBalance - withdrawalAmount}\`
+        : "❌ Minimum balance of 500 must remain in the account."
+      : "❌ Insufficient account balance."
+    : "❌ Withdrawal amount must be a multiple of 100.";
+
+console.log(balanceResult); \n `);
+
+// Solution 4 — Ternary Operator (Practice)
+const balanceResult =
+  withdrawalAmount % 100 === 0
+    ? withdrawalAmount < accountBalance
+      ? accountBalance - withdrawalAmount > 500
+        ? `✅ Withdrawal Successful!\n=> 🏦 Remaining Balance: ${accountBalance - withdrawalAmount}`
+        : "❌ Minimum balance of 500 must remain in the account."
+      : "❌ Insufficient account balance."
+    : "❌ Withdrawal amount must be a multiple of 100.";
+
+console.log("=>", balanceResult);
+
+console.log();
+
+// Task 27 - Electricity Bill. Calculate: 0-50 units = ৳4.43/unit, 0-75 units = ৳5.26/unit, 75-200 = ৳8.50/unit, 201-300 = ৳9.10/unit, 301-400 = ৳9.62/unit, 401-600 = ৳15.01/unit, Above 600 = ৳17.35/unit. Use conditional logic to calculate the total bill.
+console.log(`
+// ===========================================
+// Task 27
+// Electricity Bill Calculator (Slab-wise)
+//
+// Create an electricity bill calculator using
+// a variable named unitsConsumed.
+//
+// Calculate the bill using the following
+// progressive slab rates:
+//
+// • Lifeline 50 units      → ৳4.63 per unit
+// • First 75 units         → ৳5.26 per unit
+// • Next 125 units         → ৳8.50 per unit
+// • Next 100 units         → ৳9.10 per unit
+// • Next 100 units         → ৳9.62 per unit
+// • Next 200 units         → ৳15.01 per unit
+// • Remaining units        → ৳17.35 per unit
+//
+// Calculate and print:
+// • Units Consumed
+// • Bill for each slab
+// • Total Electricity Bill
+//
+// Challenge:
+// • Use conditional statements.
+// • Do not use loops.
+// =========================================== \n `);
+
+const unitsConsumed = 650;
+
+console.log(`
+===== Variable Declaration =====
+
+const unitsConsumed = 650;
+
+=============================== `);
+
+console.log(`
+// Direct Method - Nested if
+
+if (unitsConsumed > 0) {
+  if (unitsConsumed <= 50) {
+    console.log(\` 🧾 Total Bill: ৳ \${(unitsConsumed * 4.43).toFixed(2)}\`);
+  } else if (unitsConsumed <= 75) {
+    console.log(\` 🧾 Total Bill: ৳ \${(unitsConsumed * 5.26).toFixed(2)}\`);
+  } else if (unitsConsumed <= 200) {
+    console.log(\` 🧾 Total Bill: ৳ \${(unitsConsumed * 8.5).toFixed(2)}\`);
+  } else if (unitsConsumed <= 300) {
+    console.log(\` 🧾 Total Bill: ৳ \${(unitsConsumed * 9.1).toFixed(2)}\`);
+  } else if (unitsConsumed <= 400) {
+    console.log(\` 🧾 Total Bill: ৳ \${(unitsConsumed * 9.62).toFixed(2)}\`);
+  } else if (unitsConsumed <= 600) {
+    console.log(\` 🧾 Total Bill: ৳ \${(unitsConsumed * 15.01).toFixed(2)}\`);
+  } else {
+    console.log(\` 🧾 Total Bill: ৳ \${(unitsConsumed * 17.35).toFixed(2)}\`);
+  }
+} else {
+  console.log("=> ❌ Invalid unit consumption.");
+} \n `);
+
+// Direct Method - Nested if
+if (unitsConsumed > 0) {
+  if (unitsConsumed <= 50) {
+    console.log(`=> 🧾 Total Bill: ৳ ${(unitsConsumed * 4.43).toFixed(2)}`);
+  } else if (unitsConsumed <= 75) {
+    console.log(`=> 🧾 Total Bill: ৳ ${(unitsConsumed * 5.26).toFixed(2)}`);
+  } else if (unitsConsumed <= 200) {
+    console.log(`=> 🧾 Total Bill: ৳ ${(unitsConsumed * 8.5).toFixed(2)}`);
+  } else if (unitsConsumed <= 300) {
+    console.log(`=> 🧾 Total Bill: ৳ ${(unitsConsumed * 9.1).toFixed(2)}`);
+  } else if (unitsConsumed <= 400) {
+    console.log(`=> 🧾 Total Bill: ৳ ${(unitsConsumed * 9.62).toFixed(2)}`);
+  } else if (unitsConsumed <= 600) {
+    console.log(`=> 🧾 Total Bill: ৳ ${(unitsConsumed * 15.01).toFixed(2)}`);
+  } else {
+    console.log(`=> 🧾 Total Bill: ৳ ${(unitsConsumed * 17.35).toFixed(2)}`);
+  }
+} else {
+  console.log("=> ❌ Invalid unit consumption.");
+}
+
+console.log(`
+// Using if...else if...else
+
+let totalBill = 0;
+
+if (unitsConsumed <= 50) {
+  totalBill = unitsConsumed * 4.43;
+} else if (unitsConsumed <= 75) {
+  totalBill = unitsConsumed * 5.26;
+} else if (unitsConsumed <= 200) {
+  totalBill = 75 * 5.26 + (unitsConsumed - 75) * 8.5;
+} else if (unitsConsumed <= 300) {
+  totalBill = 75 * 5.26 + 125 * 8.5 + (unitsConsumed - 200) * 9.1;
+} else if (unitsConsumed <= 400) {
+  totalBill = 75 * 5.26 + 125 * 8.5 + 100 * 9.1 + (unitsConsumed - 300) * 9.62;
+} else if (unitsConsumed <= 600) {
+  totalBill =
+    75 * 5.26 +
+    125 * 8.5 +
+    100 * 9.1 +
+    100 * 9.62 +
+    (unitsConsumed - 400) * 15.01;
+} else {
+  totalBill =
+    75 * 5.26 +
+    125 * 8.5 +
+    100 * 9.1 +
+    100 * 9.62 +
+    200 * 15.01 +
+    (unitsConsumed - 600) * 17.35;
+}
+
+console.log(\`⚡ Units Consumed : \${unitsConsumed}\`);
+console.log(\`🧾 Total Bill     : ৳\${totalBill.toFixed(2)}\`); \n `);
+
+// Using if...else if...else
+let totalBill = 0;
+
+if (unitsConsumed <= 50) {
+  totalBill = unitsConsumed * 4.43;
+} else if (unitsConsumed <= 75) {
+  totalBill = unitsConsumed * 5.26;
+} else if (unitsConsumed <= 200) {
+  totalBill = 75 * 5.26 + (unitsConsumed - 75) * 8.5;
+} else if (unitsConsumed <= 300) {
+  totalBill = 75 * 5.26 + 125 * 8.5 + (unitsConsumed - 200) * 9.1;
+} else if (unitsConsumed <= 400) {
+  totalBill = 75 * 5.26 + 125 * 8.5 + 100 * 9.1 + (unitsConsumed - 300) * 9.62;
+} else if (unitsConsumed <= 600) {
+  totalBill =
+    75 * 5.26 +
+    125 * 8.5 +
+    100 * 9.1 +
+    100 * 9.62 +
+    (unitsConsumed - 400) * 15.01;
+} else {
+  totalBill =
+    75 * 5.26 +
+    125 * 8.5 +
+    100 * 9.1 +
+    100 * 9.62 +
+    200 * 15.01 +
+    (unitsConsumed - 600) * 17.35;
+}
+
+console.log(`=> ⚡ Units Consumed : ${unitsConsumed}`);
+console.log(`=> 🧾 Total Bill     : ৳${totalBill.toFixed(2)} \n `);
+
+console.log(`
+// Using slab - Detailed Breakdown
+
+let lifelineSlab = 0;
+let slab1 = 0;
+let slab2 = 0;
+let slab3 = 0;
+let slab4 = 0;
+let slab5 = 0;
+let slab6 = 0;
+
+if (unitsConsumed <= 50) {
+  lifelineSlab = unitsConsumed * 4.43;
+} else if (unitsConsumed <= 75) {
+  slab1 = unitsConsumed * 5.26;
+} else if (unitsConsumed <= 200) {
+  slab1 = 75 * 5.26;
+  slab2 = (unitsConsumed - 75) * 8.5;
+} else if (unitsConsumed <= 300) {
+  slab1 = 75 * 5.26;
+  slab2 = 125 * 8.5;
+  slab3 = (unitsConsumed - 200) * 9.1;
+} else if (unitsConsumed <= 400) {
+  slab1 = 75 * 5.26;
+  slab2 = 125 * 8.5;
+  slab3 = 100 * 9.1;
+  slab4 = (unitsConsumed - 300) * 9.62;
+} else if (unitsConsumed <= 600) {
+  slab1 = 75 * 5.26;
+  slab2 = 125 * 8.5;
+  slab3 = 100 * 9.1;
+  slab4 = 100 * 9.62;
+  slab5 = (unitsConsumed - 400) * 15.01;
+} else {
+  slab1 = 75 * 5.26;
+  slab2 = 125 * 8.5;
+  slab3 = 100 * 9.1;
+  slab4 = 100 * 9.62;
+  slab5 = 200 * 15.01;
+  slab6 = (unitsConsumed - 600) * 17.35;
+}
+
+const totalBillAmount = slab1 + slab2 + slab3 + slab4 + slab5 + slab6;
+
+console.log("╔════════════════════════════════════════════╗");
+console.log("║          🏢 পল্লী বিদ্যুৎ সমিতি বিল           ║");
+console.log("╠════════════════════════════════════════════╣");
+console.log(\`║ ⚡ Units Consumed : \${unitsConsumed.toString().padStart(22)} ║\`);
+console.log("╟────────────────────────────────────────────╢");
+console.log(\`║ 0-50 Units        : \${\`৳ \${lifelineSlab.toFixed(2)}\`.padStart(22)} ║\`);
+console.log(\`║ 0-75 Units        : \${\`৳ \${slab1.toFixed(2)}\`.padStart(22)} ║\`);
+console.log(\`║ 76-200 Units      : \${\`৳ \${slab2.toFixed(2)}\`.padStart(22)} ║\`);
+console.log(\`║ 201-300 Units     : \${\`৳ \${slab3.toFixed(2)}\`.padStart(22)} ║\`);
+console.log(\`║ 301-400 Units     : \${\`৳ \${slab4.toFixed(2)}\`.padStart(22)} ║\`);
+console.log(\`║ 401-600 Units     : \${\`৳ \${slab5.toFixed(2)}\`.padStart(22)} ║\`);
+console.log(\`║ Above 600 Units   : \${\`৳ \${slab6.toFixed(2)}\`.padStart(22)} ║\`);
+console.log("╠════════════════════════════════════════════╣");
+console.log(
+  \`║ 🧾 Total Bill     : \${\`৳ \${totalBill.toFixed(2)}\`.padStart(22)} ║\`,
+);
+console.log("╚════════════════════════════════════════════╝") \n \n `);
+
+// Using slab - Detailed Breakdown
+let lifelineSlab = 0;
+let slab1 = 0;
+let slab2 = 0;
+let slab3 = 0;
+let slab4 = 0;
+let slab5 = 0;
+let slab6 = 0;
+
+if (unitsConsumed <= 50) {
+  lifelineSlab = unitsConsumed * 4.43;
+} else if (unitsConsumed <= 75) {
+  slab1 = unitsConsumed * 5.26;
+} else if (unitsConsumed <= 200) {
+  slab1 = 75 * 5.26;
+  slab2 = (unitsConsumed - 75) * 8.5;
+} else if (unitsConsumed <= 300) {
+  slab1 = 75 * 5.26;
+  slab2 = 125 * 8.5;
+  slab3 = (unitsConsumed - 200) * 9.1;
+} else if (unitsConsumed <= 400) {
+  slab1 = 75 * 5.26;
+  slab2 = 125 * 8.5;
+  slab3 = 100 * 9.1;
+  slab4 = (unitsConsumed - 300) * 9.62;
+} else if (unitsConsumed <= 600) {
+  slab1 = 75 * 5.26;
+  slab2 = 125 * 8.5;
+  slab3 = 100 * 9.1;
+  slab4 = 100 * 9.62;
+  slab5 = (unitsConsumed - 400) * 15.01;
+} else {
+  slab1 = 75 * 5.26;
+  slab2 = 125 * 8.5;
+  slab3 = 100 * 9.1;
+  slab4 = 100 * 9.62;
+  slab5 = 200 * 15.01;
+  slab6 = (unitsConsumed - 600) * 17.35;
+}
+
+const totalBillAmount = slab1 + slab2 + slab3 + slab4 + slab5 + slab6;
+
+console.log("╔════════════════════════════════════════════╗");
+console.log("║          🏢 পল্লী বিদ্যুৎ সমিতি বিল           ║");
+console.log("╠════════════════════════════════════════════╣");
+console.log(`║ ⚡ Units Consumed : ${unitsConsumed.toString().padStart(22)} ║`);
+console.log("╟────────────────────────────────────────────╢");
+console.log(
+  `║ 0-50 Units        : ${`৳ ${lifelineSlab.toFixed(2)}`.padStart(22)} ║`,
+);
+console.log(`║ 0-75 Units        : ${`৳ ${slab1.toFixed(2)}`.padStart(22)} ║`);
+console.log(`║ 76-200 Units      : ${`৳ ${slab2.toFixed(2)}`.padStart(22)} ║`);
+console.log(`║ 201-300 Units     : ${`৳ ${slab3.toFixed(2)}`.padStart(22)} ║`);
+console.log(`║ 301-400 Units     : ${`৳ ${slab4.toFixed(2)}`.padStart(22)} ║`);
+console.log(`║ 401-600 Units     : ${`৳ ${slab5.toFixed(2)}`.padStart(22)} ║`);
+console.log(`║ Above 600 Units   : ${`৳ ${slab6.toFixed(2)}`.padStart(22)} ║`);
+console.log("╠════════════════════════════════════════════╣");
+console.log(
+  `║ 🧾 Total Bill     : ${`৳ ${totalBill.toFixed(2)}`.padStart(22)} ║`,
+);
+console.log("╚════════════════════════════════════════════╝");
+
+// console.log(
+//   `║ Lifeline (0-50)   : ৳ ${lifelineSlab.toFixed(2).padStart(20)} ║`,
+// );
+
+// console.log("------------------------");
+// console.log("  পল্লী বিদ্যুৎ সমিতি বিল");
+// console.log("------------------------");
+// console.log(`⚡ Units Consumed : ${unitsConsumed}`);
+// console.log(`────────────────────────`);
+// console.log(`0-50 Units    : ৳${lifelineSlab.toFixed(2)}`);
+// console.log(`0-75 Units    : ৳${slab1.toFixed(2)}`);
+// console.log(`75-200 Units  : ৳${slab2.toFixed(2)}`);
+// console.log(`201-300 Units : ৳${slab3.toFixed(2)}`);
+// console.log(`301-400 Units : ৳${slab4.toFixed(2)}`);
+// console.log(`401-600 Units : ৳${slab5.toFixed(2)}`);
+// console.log(`Above 600     : ৳${slab6.toFixed(2)}`);
+// console.log(`────────────────────────`);
+// console.log(`🧾 Total Bill : ৳${totalBill.toFixed(2)}`);
+// console.log("------------------------");
+
+// console.log("┌──────────────────────────────────────┐");
+// console.log("│        পল্লী বিদ্যুৎ সমিতি বিল        │");
+// console.log("├──────────────────────────────────────┤");
+// console.log(`│ ⚡ Units Consumed : ${String(unitsConsumed).padEnd(14)}│`);
+// console.log("├──────────────────────────────────────┤");
+// console.log(`│ 0 - 50 Units    : ৳${lifelineSlab.toFixed(2).padStart(10)} │`);
+// console.log(`│ 51 - 75 Units   : ৳${slab1.toFixed(2).padStart(10)} │`);
+// console.log(`│ 76 - 200 Units  : ৳${slab2.toFixed(2).padStart(10)} │`);
+// console.log(`│ 201 - 300 Units : ৳${slab3.toFixed(2).padStart(10)} │`);
+// console.log(`│ 301 - 400 Units : ৳${slab4.toFixed(2).padStart(10)} │`);
+// console.log(`│ 401 - 600 Units : ৳${slab5.toFixed(2).padStart(10)} │`);
+// console.log(`│ Above 600 Units : ৳${slab6.toFixed(2).padStart(10)} │`);
+// console.log("├──────────────────────────────────────┤");
+// console.log(`│ 🧾 Total Bill    : ৳${totalBill.toFixed(2).padStart(10)} │`);
+// console.log("└──────────────────────────────────────┘");
+
+// console.log("==============================================");
+// console.log("         🏢 পল্লী বিদ্যুৎ সমিতি বিল");
+// console.log("==============================================");
+// console.table({
+//   "0-50 Units": `৳${lifelineSlab.toFixed(2)}`,
+//   "51-75 Units": `৳${slab1.toFixed(2)}`,
+//   "76-200 Units": `৳${slab2.toFixed(2)}`,
+//   "201-300 Units": `৳${slab3.toFixed(2)}`,
+//   "301-400 Units": `৳${slab4.toFixed(2)}`,
+//   "401-600 Units": `৳${slab5.toFixed(2)}`,
+//   "Above 600": `৳${slab6.toFixed(2)}`,
+//   "Total Bill": `৳${totalBill.toFixed(2)}`,
+// });
+
+console.log();
+
+// task 28 - Rock Paper Scissors (Handle all 9 possible combinations).
+console.log(`
+// ===========================================
+// Task 28
+// Rock, Paper, Scissors Game
+//
+// Create a Rock, Paper, Scissors game using
+// two variables:
+//
+// • playerChoice
+// • computerChoice
+//
+// Both variables can have one of these values:
+// "Rock", "Paper", or "Scissors".
+//
+// Determine the winner using conditional
+// statements.
+//
+// Rules:
+// • Rock beats Scissors
+// • Scissors beats Paper
+// • Paper beats Rock
+// • If both choices are the same, it's a Draw.
+//
+// Challenge:
+// • Handle all 9 possible combinations.
+// • Print both choices and the game result.
+// =========================================== `);
+
+const playerChoice = "Rock";
+const computerChoice = "Scissors";
+
+console.log(`
+console.log(\`👤 Player   : \${playerChoice}\`);
+console.log(\`🤖 Computer : \${computerChoice}\`); \n `);
+
+console.log(`=> 👤 Player   : ${playerChoice}`);
+console.log(`=> 🤖 Computer : ${computerChoice}`);
+
+console.log(`
+// Solution 1 — Using if...else if...else
+
+if (playerChoice === computerChoice) {
+  console.log("🤝 It's a Draw!");
+} else if (
+  (playerChoice === "Rock" && computerChoice === "Scissors") ||
+  (playerChoice === "Scissors" && computerChoice === "Paper") ||
+  (playerChoice === "Paper" && computerChoice === "Rock")
+) {
+  console.log("🎉 Player Wins!");
+} else {
+  console.log("💻 Computer Wins!");
+} \n `);
+
+// Solution 1 — Using if...else if...else
+if (playerChoice === computerChoice) {
+  console.log("=> 🤝 It's a Draw!");
+} else if (
+  (playerChoice === "Rock" && computerChoice === "Scissors") ||
+  (playerChoice === "Scissors" && computerChoice === "Paper") ||
+  (playerChoice === "Paper" && computerChoice === "Rock")
+) {
+  console.log("=> 🎉 Player Wins!");
+} else {
+  console.log("=> 💻 Computer Wins!");
+}
+
+console.log(`
+// Solution 2 — Handle All 9 Combinations Explicitly
+
+if (playerChoice === "Rock" && computerChoice === "Rock") {
+  console.log("🤝 Draw");
+} else if (playerChoice === "Rock" && computerChoice === "Paper") {
+  console.log("💻 Computer Wins");
+} else if (playerChoice === "Rock" && computerChoice === "Scissors") {
+  console.log("🎉 Player Wins");
+} else if (playerChoice === "Paper" && computerChoice === "Rock") {
+  console.log("🎉 Player Wins");
+} else if (playerChoice === "Paper" && computerChoice === "Paper") {
+  console.log("🤝 Draw");
+} else if (playerChoice === "Paper" && computerChoice === "Scissors") {
+  console.log("💻 Computer Wins");
+} else if (playerChoice === "Scissors" && computerChoice === "Rock") {
+  console.log("💻 Computer Wins");
+} else if (playerChoice === "Scissors" && computerChoice === "Paper") {
+  console.log("🎉 Player Wins");
+} else if (playerChoice === "Scissors" && computerChoice === "Scissors") {
+  console.log("🤝 Draw");
+} \n `);
+
+// Solution 2 — Handle All 9 Combinations Explicitly
+if (playerChoice === "Rock" && computerChoice === "Rock") {
+  console.log("=> 🤝 Draw");
+} else if (playerChoice === "Rock" && computerChoice === "Paper") {
+  console.log("=> 💻 Computer Wins");
+} else if (playerChoice === "Rock" && computerChoice === "Scissors") {
+  console.log("=> 🎉 Player Wins");
+} else if (playerChoice === "Paper" && computerChoice === "Rock") {
+  console.log("=> 🎉 Player Wins");
+} else if (playerChoice === "Paper" && computerChoice === "Paper") {
+  console.log("=> 🤝 Draw");
+} else if (playerChoice === "Paper" && computerChoice === "Scissors") {
+  console.log("=> 💻 Computer Wins");
+} else if (playerChoice === "Scissors" && computerChoice === "Rock") {
+  console.log("=> 💻 Computer Wins");
+} else if (playerChoice === "Scissors" && computerChoice === "Paper") {
+  console.log("=> 🎉 Player Wins");
+} else if (playerChoice === "Scissors" && computerChoice === "Scissors") {
+  console.log("=> 🤝 Draw");
+}
+
+console.log(`
+// Solution 3 — Nested if
+
+if (playerChoice === computerChoice) {
+  console.log("🤝 Draw");
+} else {
+  if (playerChoice === "Rock") {
+    if (computerChoice === "Scissors") {
+      console.log("🎉 Player Wins");
+    } else {
+      console.log("💻 Computer Wins");
+    }
+  } else if (playerChoice === "Paper") {
+    if (computerChoice === "Rock") {
+      console.log("🎉 Player Wins");
+    } else {
+      console.log("💻 Computer Wins");
+    }
+  } else {
+    if (computerChoice === "Paper") {
+      console.log("🎉 Player Wins");
+    } else {
+      console.log("💻 Computer Wins");
+    }
+  }
+} \n `);
+
+// Solution 3 — Nested if
+if (playerChoice === computerChoice) {
+  console.log("=> 🤝 Draw");
+} else {
+  if (playerChoice === "Rock") {
+    if (computerChoice === "Scissors") {
+      console.log("=> 🎉 Player Wins");
+    } else {
+      console.log("=> 💻 Computer Wins");
+    }
+  } else if (playerChoice === "Paper") {
+    if (computerChoice === "Rock") {
+      console.log("=> 🎉 Player Wins");
+    } else {
+      console.log("=> 💻 Computer Wins");
+    }
+  } else {
+    if (computerChoice === "Paper") {
+      console.log("=> 🎉 Player Wins");
+    } else {
+      console.log("=> 💻 Computer Wins");
+    }
+  }
+}
+
+console.log(`
+// Solution 4 — Using switch
+
+switch (\`\${playerChoice}-\${computerChoice}\`) {
+  case "Rock-Rock":
+  case "Paper-Paper":
+  case "Scissors-Scissors":
+    console.log("🤝 Draw");
+    break;
+
+  case "Rock-Scissors":
+  case "Scissors-paper":
+  case "Paper-Rock":
+    console.log("🎉 Player Wins");
+    break;
+
+  default:
+    console.log("💻 Computer Wins");
+} \n `);
+
+// Solution 4 — Using switch
+switch (`${playerChoice}-${computerChoice}`) {
+  case "Rock-Rock":
+  case "Paper-Paper":
+  case "Scissors-Scissors":
+    console.log("=> 🤝 Draw");
+    break;
+
+  case "Rock-Scissors":
+  case "Scissors-paper":
+  case "Paper-Rock":
+    console.log("=> 🎉 Player Wins");
+    break;
+
+  default:
+    console.log("=> 💻 Computer Wins");
+}
+
+console.log();
+
+// Task 29 - Chess Board. Print whether the square is Black or White.
+console.log(`
+// ===========================================
+// Task 29
+// Chess Board Square Color
+//
+// Given the row and column position of a
+// square on a chessboard, determine whether
+// the square is Black or White.
+//
+// Rules:
+// • If (row + column) is even → Black
+// • If (row + column) is odd  → White
+//
+// Print:
+// • Row Number
+// • Column Number
+// • Square Color
+//
+// Challenge:
+// • Solve it using different conditional
+//   approaches.
+// =========================================== \n `);
+
+console.log(`
+      1   2   3   4   5   6   7   8
+   ┌─────────────────────────────────┐
+1  │ B │ W │ B │ W │ B │ W │ B │ W │
+2  │ W │ B │ W │ B │ W │ B │ W │ B │
+3  │ B │ W │ B │ W │ B │ W │ B │ W │
+4  │ W │ B │ W │ B │ W │ B │ W │ B │
+5  │ B │ W │ B │ W │ B │ W │ B │ W │
+6  │ W │ B │ W │ B │ W │ B │ W │ B │
+7  │ B │ W │ B │ W │ B │ W │ B │ W │
+8  │ W │ B │ W │ B │ W │ B │ W │ B │
+   └─────────────────────────────────┘  `);
+
+const row = 5;
+const col = 8;
+
+console.log(`
+===== Variable Declaration =====
+
+const row = 5;
+const col = 8;
+
+=============================== `);
+
+console.log(`
+// Solution 1 — Using if...else
+
+if ((row + col) % 2 === 0) {
+  console.log("⬛ Square Color: Black");
+} else {
+  console.log("⬜ Square Color: White");
+} \n `);
+
+// Solution 1 — Using if...else
+if ((row + col) % 2 === 0) {
+  console.log("=> ⬛ Square Color: Black");
+} else {
+  console.log("=> ⬜ Square Color: White");
+}
+
+console.log(`
+// Solution 2 — Using Ternary Operator
+
+const squareColor = (row + col) % 2 === 1 ? "⬜ White" : "⬛ Black";
+
+console.log(\`Square Color: \${squareColor}\`); \n `);
+
+// Solution 2 — Using Ternary Operator
+const squareColor = (row + col) % 2 === 1 ? "⬜ White" : "⬛ Black";
+
+console.log(`=> Square Color: ${squareColor}`);
+
+console.log(`
+// Solution 3 — Using switch
+
+switch ((row + col) % 2) {
+  case 0:
+    console.log("⬛ Black");
+    break;
+  case 1:
+    console.log("⬜ White");
+    break;
+} \n `);
+
+// Solution 3 — Using switch
+switch ((row + col) % 2) {
+  case 0:
+    console.log("=> ⬛ Black");
+    break;
+  case 1:
+    console.log("=> ⬜ White");
+    break;
+}
+
+// Task 30 - Traffic Light. Output depends on both light color and remaining timer.
+console.log(`
+// ===========================================
+// Task 31
+// Traffic Light Decision System
+//
+// Create a traffic light decision system.
+//
+// Given:
+//
+// • light  → "Red", "Yellow", or "Green"
+// • timer  → Remaining time in seconds
+//
+// Determine what a driver should do based
+// on both the traffic light color and the
+// remaining timer.
+//
+// Rules:
+//
+// 🔴 Red
+// • timer > 0  → Stop
+//
+// 🟡 Yellow
+// • timer > 3  → Slow Down
+// • timer <= 3 → Prepare to Stop
+//
+// 🟢 Green
+// • timer > 5  → Go
+// • timer <= 5 → Hurry Up (Light Changing Soon)
+//
+// Otherwise:
+// • Invalid Traffic Light
+//
+// Challenge:
+// • Use conditional statements.
+// • Consider both the light color and timer.
+// =========================================== \n `);
+const light = "Yellow";
+const timer = 3;
+
+console.log(`
+===== Variable Declaration =====
+
+const light = "Yellow";
+const timer = 3;
+
+=============================== `);
+
+console.log(`
+// using Nested if
+
+if (light === "Red") {
+  console.log("🛑 Stop");
+} else if (light === "Yellow") {
+  if (timer <= 3) {
+    console.log("⚠️  Prepare to Stop");
+  } else {
+    console.log("🚗 Slow Down");
+  }
+} else if (light === "Green") {
+  if (timer > 5) {
+    console.log("🟢 Go");
+  } else {
+    console.log("🏃 Hurry Up! Light Changing Soon");
+  }
+} else {
+  console.log("❌ Invalid Traffic Light");
+} \n `);
+
+// using Nested if
+if (light === "Red") {
+  console.log("=> 🛑 Stop");
+} else if (light === "Yellow") {
+  if (timer <= 3) {
+    console.log("=> ⚠️  Prepare to Stop");
+  } else {
+    console.log("=> 🚗 Slow Down");
+  }
+} else if (light === "Green") {
+  if (timer > 5) {
+    console.log("=> 🟢 Go");
+  } else {
+    console.log("=> 🏃 Hurry Up! Light Changing Soon");
+  }
+} else {
+  console.log("=> ❌ Invalid Traffic Light");
+}
+
+console.log(`
+// Solution 2 — Using Logical Operators
+
+if (light === "Red") {
+  console.log("🛑 Stop");
+} else if (light === "Yellow" && timer <= 3) {
+  console.log("⚠️  Prepare to Stop");
+} else if (light === "Yellow" && timer > 3) {
+  console.log("🚗 Slow Down");
+} else if (light === "Green" && timer > 5) {
+  console.log("🟢 Go");
+} else if (light === "Green" && timer <= 5) {
+  console.log("🏃 Hurry Up! Light Changing Soon");
+} else {
+  console.log("❌ Invalid Traffic Light");
+} \n `);
+
+// Solution 2 — Using Logical Operators
+if (light === "Red") {
+  console.log("=> 🛑 Stop");
+} else if (light === "Yellow" && timer <= 3) {
+  console.log("=> ⚠️  Prepare to Stop");
+} else if (light === "Yellow" && timer > 3) {
+  console.log("=> 🚗 Slow Down");
+} else if (light === "Green" && timer > 5) {
+  console.log("=> 🟢 Go");
+} else if (light === "Green" && timer <= 5) {
+  console.log("=> 🏃 Hurry Up! Light Changing Soon");
+} else {
+  console.log("=> ❌ Invalid Traffic Light");
+}
+
+console.log(`
+// Solution 3 — Using switch
+
+switch (light) {
+  case "Red":
+    console.log("🛑 Stop");
+    break;
+
+  case "Yellow":
+    console.log(timer <= 3 ? "⚠️  Prepare to Stop" : "🚗 Slow Down");
+    break;
+
+  case "Green":
+    console.log(timer > 5 ? "🟢 Go" : "🏃 Hurry Up! Light Changing Soon");
+
+  default:
+    console.log("❌ Invalid Traffic Light");
+} \n `);
+
+// Solution 3 — Using switch
+switch (light) {
+  case "Red":
+    console.log("=> 🛑 Stop");
+    break;
+
+  case "Yellow":
+    console.log(timer <= 3 ? "=> ⚠️  Prepare to Stop" : "=> 🚗 Slow Down");
+    break;
+
+  case "Green":
+    console.log(timer > 5 ? "=> 🟢 Go" : "=> 🏃 Hurry Up! Light Changing Soon");
+
+  default:
+    console.log("=> ❌ Invalid Traffic Light");
+}
+
+console.log();
