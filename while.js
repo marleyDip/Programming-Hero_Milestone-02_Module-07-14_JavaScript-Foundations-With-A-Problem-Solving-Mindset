@@ -13,11 +13,11 @@
  * - The loop may run infinitely
  *
  * What is the difference between break and continue?
- * - Break exits the loop, continue skips the current iteration
+ * - Break exits the loop; continue skips the current iteration
  *
  * */
 
-// for used for known iteration and while used for unknown iteration.
+// for is used for known iterations, and while is used for unknown iterations.
 
 // for (let i = 899; i < 903; i++) {}
 
@@ -31,7 +31,7 @@ while (count < 903) {
 
 console.log();
 
-// is Same as => if (true) {} but in while upper declare a variable and inside loop body increment or decrement
+// is the same as => if (true) {} but in while upper declare a variable and inside the loop body increment or decrement
 
 // Keep adding the digits until only one digit remains.
 let num = 9875;
@@ -52,9 +52,9 @@ console.log("Repeated Digit Sum:", num);
 
 /**
  *
- * num >= 10 => check number is two or more digit, add or sum those number
+ * num >= 10 => check if the number is two or more digits; add or sum those number
  *
- * Every time, digit addiction start with 0 because sum declare inside outer while loop
+ * Every time, digit addition starts with 0 because sum is declared inside the outer while loop
  *
  *
  * Inner while loop, 1st round
