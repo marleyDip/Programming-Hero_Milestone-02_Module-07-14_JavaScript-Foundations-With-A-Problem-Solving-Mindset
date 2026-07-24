@@ -13,7 +13,7 @@
  * - The loop may run infinitely
  *
  * What is the difference between break and continue?
- * - Break exits the loop, continue skips the current iteration
+ * - Break exits the loop; continue skips the current iteration
  *
  * */
 
@@ -32,16 +32,16 @@ for (let i = 0; i < 10; i++) {
 /**
  * Run and Debug - Obviously give a breakpoint
  *
- * Without breakpoint, it won't work as expected
+ * Without a breakpoint, it won't work as expected
  *
- * 1st i = 0; check O < 10; true, enter the loop body and execute, see debug console = value of i 0
+ * 1st i = 0; check i < 10; true, enter the loop body and execute, see debug console = value of i 0
  *
- * Then it go modification or update or step or increment/decrement, i++ = 0 increases to 1, in variable -> block i = 1 and check 1 < 10; true, enter the loop body and execute 2nd time, see debug console = value of i 1
+ * Then it goes to modification or update or step or increment/decrement; i++ = 0 increases to 1, in variable -> block i = 1 and check 1 < 10; true, enter the loop body and execute 2nd time, see debug console = value of i 1
  *
  *
  * continue process... see debug console = value of i 2 ... see debug console = value of i 9
  *
- * when is it 10, check 10 < 10; false, exit the loop and automatically terminate or end Run and Debug
+ * when it is 10, check 10 < 10; false, exit the loop and automatically terminate or end Run and Debug
  */
 
 console.log();
