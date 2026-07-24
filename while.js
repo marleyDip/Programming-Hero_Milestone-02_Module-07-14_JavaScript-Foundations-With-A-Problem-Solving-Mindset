@@ -1,3 +1,22 @@
+/**
+ *
+ * Which loop is usually useful when the number of repetitions depends on a condition?
+ * - while loop
+ *
+ * Which loop is generally preferred when you know the number of repetitions beforehand?
+ * - for loop
+ *
+ * Why is updating the loop variable important?
+ * - It helps the loop eventually reach its stopping condition
+ *
+ * What can happen if a loop condition never becomes false?
+ * - The loop may run infinitely
+ *
+ * What is the difference between break and continue?
+ * - Break exits the loop, continue skips the current iteration
+ *
+ * */
+
 // for used for known iteration and while used for unknown iteration.
 
 // for (let i = 899; i < 903; i++) {}
