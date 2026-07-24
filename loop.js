@@ -1,14 +1,14 @@
 /**
  *
  * A loop is a programming tool that repeats a block of code multiple times
- * - so you didn't have to write it over and over again.
- * - Same action happens over and over until you decide to stop.
+ * - so you don't have to write it over and over again.
+ * - The same action happens over and over until you decide to stop.
  *
  * - To repeat a task multiple times without writing duplicate code.
  *
  * 1. starting situation
  * 2. count value adapt
- * 3. Stopping condition (until ends or fixed number of times)
+ * 3. Stopping condition (until it ends or a fixed number of times)
  * 4. repetitive same or similar task
  *
  *
@@ -43,9 +43,9 @@
  *
  * for (start; end; step) {}
  *
- * - Declare a variable and gives him value is called start.
- * - When it is stop is called end.
- * - How many times it perform is called step.
+ * - Declaring a variable and giving it a value is called start.
+ * - When it stops, it is called end.
+ * - How many times it is performed is called step.
  *
  */
 
@@ -69,6 +69,6 @@ for (let count = 0; count < 5; count++) {
  * - The loop may run infinitely
  *
  * What is the difference between break and continue?
- * - Break exits the loop, continue skips the current iteration
+ * - Break exits the loop; continue skips the current iteration
  *
  * */
