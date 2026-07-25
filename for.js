@@ -76,8 +76,11 @@ console.log();
 
 // Prime numbers are whole numbers greater than 1 that can only be divided evenly by exactly two numbers: 1 and themselves.
 // Find All Prime Numbers from 1 to 100
+let count = 0;
+
 for (let primeNumber = 2; primeNumber <= 100; primeNumber++) {
   let isPrime = true;
+  // let count = 0; // Here every time when enter, make count = 0
 
   for (let p = 2; p < primeNumber; p++) {
     if (primeNumber % p === 0) {
@@ -87,7 +90,9 @@ for (let primeNumber = 2; primeNumber <= 100; primeNumber++) {
   }
 
   if (isPrime) {
+    count++;
     console.log(primeNumber, "is a prime number");
+    console.log("Total prime number", count);
   }
 }
 
