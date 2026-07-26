@@ -1,0 +1,96 @@
+আজকে Debugging শেখার দিন! (মাইলস্টোন ২ - মডিউল ১৪)
+#module_release #milestone_2 #javascript #debugging #module_14
+
+
+
+Programming-এর সবচেয়ে গুরুত্বপূর্ণ Skill কী?
+
+অনেকে বলবে Code লেখা।
+
+কিন্তু বাস্তবতা হলো - Bug খুঁজে বের করে ঠিক করতে পারা।
+
+
+
+একজন Junior Developer আর একজন Experienced Developer-এর মধ্যে সবচেয়ে বড় পার্থক্য হয় Debugging Skill-এ।
+
+
+
+আজকের মডিউলে শিখবে Bug কী, কেন Bug হয়, Error Message কীভাবে পড়তে হয় এবং Step by Step Bug খুঁজে বের করে কীভাবে Fix করতে হয়।
+
+
+
+মনে রেখো, ভালো Programmer সে না যে কখনো Bug করে না। ভালো Programmer সে, যে দ্রুত Bug খুঁজে বের করতে পারে।
+
+
+
+
+
+আজকের বিষয়বস্তু:
+
+  1. শুরুতেই জানবে Bug কী, Error কত ধরনের হতে পারে এবং Error Message কীভাবে পড়তে হয়। পাশাপাশি `console.log()` ব্যবহার করে কীভাবে Code-এর ভিতরে কী ঘটছে সেটা বুঝতে হয়, সেটাও শিখবে।
+
+
+
+  2. এরপর একটি ভাঙা Conditional Program Debug করবে। কোথায় Logic ভুল হয়েছে এবং কীভাবে সেটা ঠিক করতে হয় - হাতে-কলমে দেখবে।
+
+
+
+  3. তারপর Debug করবে একটি Broken Loop। Loop কেন ঠিকমতো চলছে না, কোথায় Condition ভুল হয়েছে কিংবা Infinite Loop কেন হচ্ছে - এসব বিষয় বুঝবে।
+
+
+
+  4. এরপর একটি Array সম্পর্কিত Problem Debug করবে। Index, Loop কিংবা Array Method ব্যবহারের সময় হওয়া সাধারণ ভুলগুলো খুঁজে বের করতে শিখবে।
+
+
+
+  5. তারপর থাকবে একটি Broken Function। Function Call, Parameter, Return Value কিংবা Scope-এর কারণে হওয়া Bug কীভাবে শনাক্ত করতে হয় সেটা দেখবে।
+
+
+
+  6. এরপর পরিচিত হবে VS Code Debugger-এর সাথে। Breakpoint, Step Into, Step Over, Variable Inspect - এসব ব্যবহার করে Professional উপায়ে Debug করার অভ্যাস তৈরি হবে।
+
+
+
+  7. সবশেষে পুরো Debugging Process বাস্তব একটি উদাহরণের মাধ্যমে প্রয়োগ করবে। অর্থাৎ Problem দেখবে, Error বুঝবে, Debug করবে এবং Solution বের করবে।
+
+
+
+মডিউলের শেষে থাকবে Summary এবং Practice Task, যাতে নিজের Debugging Skill আরও শক্ত করতে পারো।
+
+
+
+
+
+Debugging মানেই শেখা:
+
+  - Programming-এ Bug হওয়া কোনো ব্যর্থতা না।
+
+  - বরং Bug-ই তোমাকে শেখাবে।
+
+  - প্রথমে Error Message পড়ো।
+
+  - তারপর কোথায় Error হচ্ছে সেটা খুঁজে বের করো।
+
+  - একবারে পুরো Code না দেখে ছোট ছোট অংশে ভাগ করে Test করো।
+
+  - প্রয়োজনে `console.log()` ব্যবহার করো।
+
+  - আর VS Code Debugger ব্যবহার করে Step by Step Code Execute করে দেখো।
+
+  - ধৈর্য ধরে কাজ করলে প্রায় সব Bug-ই ধরা যায়।
+  
+
+  
+14-1 Bug basics: what is a bug, error types, reading errors and console.log
+
+14-2 Debug a broken conditional
+
+14-3 Debug a broken loop
+
+14-4 Debug a broken array problem
+
+14-5 Debug a broken function
+
+14-6 Using the VS Code debugger
+
+14-7 Apply the full process
