@@ -76,7 +76,8 @@ console.log(findIndexOfValue([10, 20, 30], 20)); // 1
 
 function averageOfPositives(arr) {
   let total = 0;
-  let count = arr.length;
+  // let count = 0;
+  const count = arr.length;
 
   for (let i = 0; i < arr.length; i++) {
     console.log("outside i->", i, arr[i]);
@@ -90,14 +91,16 @@ function averageOfPositives(arr) {
 
       // console.log("The Count", count++); // 0, 2, 4, 6
       // count++;
+      // console.log("The Count", count);
     }
 
-    // console.log("The Count", count++); // 0, 2, 4, 6, 8
     // count++;
+    // console.log("The Count", count++);
   }
 
-  // return total / count - 1;
   console.log("Total", total);
+
+  // return total / (count - 1);
   return total / count;
 }
 
