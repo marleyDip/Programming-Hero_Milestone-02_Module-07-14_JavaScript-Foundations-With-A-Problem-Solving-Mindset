@@ -114,6 +114,7 @@ let primeNumbers = [];
 for (let num = 2; num <= 100; num++) {
   let isPrime = true;
 
+  // for (let i = 2; i * i <= num; i++) {
   for (let i = 2; i <= Math.sqrt(num); i++) {
     if (num % i === 0) {
       isPrime = false;
@@ -169,6 +170,7 @@ console.log();
 let num = 28;
 let add = 1;
 
+// for (let i = 2; i * i <= num; i++) {
 for (let i = 2; i <= Math.sqrt(num); i++) {
   if (num % i === 0) {
     add += i;
@@ -190,6 +192,6 @@ if (num === 1) {
 }
 
 /* Solution	                Complexity
-Loop from 1 to (num - 1)	O(n)
+Loop from 1 to (num - 1)	  O(n)
 
 Loop up to √num	            O(√n) */
