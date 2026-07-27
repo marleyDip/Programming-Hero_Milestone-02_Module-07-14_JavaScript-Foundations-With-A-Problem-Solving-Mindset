@@ -1,5 +1,7 @@
 /* Debug - Broken Conditional */
 
+// console.log() -> is the best way to debug.
+
 /**
  *
  * Logical Error or Bug (No crash, Wrong answer)
