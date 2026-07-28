@@ -923,7 +923,7 @@ for (let i = 1; i <= 100; i++) {
 
   // Stop the loop if the number is greater than 40
   if (i > 40) {
-    console.log(`\n=> Loop exits because ${i} is greater than 40`);
+    console.log(`\n=> Loop exits because ${i} is greater than 40.`);
     break;
   }
 
