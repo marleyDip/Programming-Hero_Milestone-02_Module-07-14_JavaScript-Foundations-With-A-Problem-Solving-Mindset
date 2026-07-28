@@ -1,0 +1,39 @@
+Why would a developer choose an array instead of creating multiple variables?
+
+=> To store multiple related values in a single structure
+
+What does an array index represent?
+
+=> The position of an element inside the array
+
+What is the index of the first element in a JavaScript array?
+
+=> 0
+
+What does the length property of an array return?
+
+=> The number of elements in the array
+
+If an array has a length of 8, what is the last valid index?
+
+=> 7
+
+Which method adds an element to the end of an array?
+
+=> push()
+
+Which method removes the last element from an array?
+
+=> pop()
+
+Which method adds an element to the beginning of an array?
+
+=> unshift()
+
+Which method removes the first element from an array?
+
+=> shift()
+
+Which method is specifically used to check whether a value is an array?
+
+=> Array.isArray()

@@ -1,0 +1,53 @@
+Module 10: Arrays — The Backbone of JavaScript!
+
+
+
+আজ থেকে শুরু হচ্ছে JavaScript-এর সবচেয়ে গুরুত্বপূর্ণ টপিকগুলোর একটি—Arrays। সামনে যত বড় বড় প্রজেক্ট বানাবে, প্রায় প্রতিটিতেই Array ব্যবহার করতে হবে। তাই এই মডিউলটা যত ভালোভাবে শিখবে, সামনে এগিয়ে যাওয়া তত সহজ হবে।
+
+
+
+এই মডিউলে শিখবে:
+
+  - এক ভ্যারিয়েবলে একাধিক ডাটা স্টোর করা
+  - Array Length, Index, Get & Set by Index
+  - push(), pop(), shift(), unshift()
+  - isArray() ও অন্যান্য Basic Array Methods
+  - for ও while Loop দিয়ে Array Traversal
+  - Reverse Method ছাড়াই Array Reverse করা
+  - sort(), slice(), splice() ব্যবহার
+
+
+তোমার Mission
+
+  - প্রতিটি ভিডিও মনোযোগ দিয়ে দেখো।
+  - ভিডিও শেষ হওয়ার সাথে সাথে নিজে কোড লেখো।
+  - ভুল করতে ভয় পেও না—ভুল থেকেই সবচেয়ে বেশি শেখা যায়।
+
+
+মনে রেখো: একজন ভালো প্রোগ্রামার আর একজন নতুন প্রোগ্রামারের পার্থক্য হলো—ভালো প্রোগ্রামার অসংখ্যবার চেষ্টা করেছে, থামেনি।
+
+
+
+Consistency beats Talent. প্রতিদিন অল্প হলেও কোড করো। আজকের ছোট ছোট প্র্যাকটিসই আগামী দিনের বড় বড় প্রজেক্ট তৈরি করার আত্মবিশ্বাস এনে দেবে।
+
+
+
+Let's master Arrays, write lots of code, and take one more step toward becoming a confident JavaScript Developer!
+
+
+
+10-1 Store More Than One Value in a Variable Using Array
+
+10-2 Array Animated video
+
+10-3 Array Length, Index, Get and Set by Index
+
+10-4 AddRemove Elements from Arrays Using push, pop, shift & unshift
+
+10-5 All About Basic Array Methods, isArray
+
+10-6 Array Traversal Using for and while Loop
+
+10-7 (optional)Reversing an Array without reverse Method
+
+10-8 Sort slice and splice an Array
