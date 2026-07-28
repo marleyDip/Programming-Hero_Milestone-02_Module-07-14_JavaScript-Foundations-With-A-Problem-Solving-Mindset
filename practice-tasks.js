@@ -380,9 +380,61 @@ console.log();
 
 // Task 12 - Write a do while loop that prints numbers from 1 to 5. Then modify the condition so it is false from the start (for example, i > 10) and observe that the loop still runs once.
 
+// A do...while loop executes the code block first, then checks the condition. 1. Run the code inside do { } 2. Check the condition 3. If true → repeat 4. If false → stop
+let d = 1;
+let doResult = "";
+do {
+  // console.log(d);
+
+  doResult += d;
+  if (d < 5) doResult += " - ";
+
+  d++;
+} while (d <= 5);
+
+console.log("Using do while, numbers from 1 to 5:", doResult);
+
+let e = 5;
+do {
+  console.log("Number execution only once:", e);
+  e--;
+} while (e > 5);
+
 console.log();
 
 // Task 13 - Write the same task — printing numbers 1 to 5 — three times: once using for, once using while, and once using do while. Compare how the code structure differs for each.
+// ======================
+// FOR LOOP
+// ======================
+console.log("\n===== FOR LOOP =====");
+
+for (let i = 1; i <= 5; i++) {
+  console.log(i);
+}
+
+// ======================
+// WHILE LOOP
+// ======================
+console.log("\n===== WHILE LOOP =====");
+
+let j = 1;
+
+while (j <= 5) {
+  console.log(j);
+  j++;
+}
+
+// ======================
+// DO...WHILE LOOP
+// ======================
+console.log("\n===== DO...WHILE LOOP =====");
+
+let k = 1;
+
+do {
+  console.log(k);
+  k++;
+} while (k <= 5);
 
 console.log();
 
@@ -392,3 +444,41 @@ console.log();
 // 2. Skips (continue) any number divisible by 5.
 // 3. Stops (break) completely once it reaches a number greater than 40.
 // 4. Prints every number that passes both checks.
+
+let output = "";
+let skipOutput = "";
+
+for (let i = 1; i <= 100; i++) {
+  // console.log(i);
+
+  // Stop the loop if the number is greater than 40
+  if (i > 40) {
+    console.log(`\nLoop exits because ${i} is greater than 40`);
+    break;
+  }
+
+  // Skip numbers divisible by 5
+  if (i % 5 === 0) {
+    console.log(`Skipping ${i} (Divisible by 5)`);
+    skipOutput += i + ",";
+    continue;
+  }
+
+  // console.log(i);
+  output += i;
+  if (i < 39) output += ", ";
+}
+
+skipOutput = skipOutput.slice(0, -1);
+
+console.log(`
+╭────────────────────────────────────╮
+│        MINI CHALLENGE REPORT       │
+├────────────────────────────────────┤
+│ Numbers : ${output}
+├────────────────────────────────────┤
+│ ⏭️  Skipped : ${skipOutput}│
+│ 🛑 Stopped : After 40              │
+│ ✅ Status : Completed Successfully │
+╰────────────────────────────────────╯
+`);
