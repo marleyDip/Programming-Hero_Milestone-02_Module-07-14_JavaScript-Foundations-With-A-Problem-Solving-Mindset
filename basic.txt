@@ -1,0 +1,258 @@
+What is an Array?
+=> Turning a pile of separate variables into one organized, numbered container. 
+    
+    0 = "Alex", 1 = "Sam", 2 = "Lee", 3 = "Kim"
+
+Learning Objectives -
+   1. See why a single variable stops being enough.
+   2. Understand why arrays were invented.
+   3. Learn the array syntax, piece by piece
+   4. Store many values inside one variable
+   5. Read values back out a simple array
+
+why isn't one variable enough?
+    let student1 = "Alex"; 
+    let student2 = "Sam"; 
+    let student3 = "Lee"; 
+    // ...student4? student5? ...student38??
+
+Example: A class of 40 students would need 40 separate variables - 40 names to invent, and no clean way to loop over them.
+
+=> We need one variable that can hold many values.
+ 
+You already use arrays in real life -
+
+    => Egg tray: One tray, many numbered slots. Each slot holds one egg - just like each index holds one value
+
+    => Bookshelf: Books stand side by side in a fixed order. "The 3rd books from the left" is an array index.
+
+    => Parking Slots: Every slot has a number painted on it. "Car in slot 2" is just an array element by index.
+
+
+=> An array is a single variable that stores a list of values, where each value sits in its own numbered slot is called an index. Its index start with 0 index.
+
+   1. One Container - instead of many variables
+   2. Ordered Slots - each with a numeric value
+   3. Loop-Friendly - works with the loops you know
+
+
+=> An array is a single variable that stores an ordered list of values - instead of one value per variable.
+    1. Each value has a position, called  an index.
+    2. Arrays can hold strings, number, or any mix of types.
+    3. Think of it like a row of numbered lockers, side by side
+
+    const array =["D", "E", 2, 5, true, false]
+
+
+===== Arrays: Length, Index & Get/Set =====
+
+How to find how many items an array holds, reach any items by its position, and change it. 
+
+const arr = [10, 20, 30, 40] => arr[0], arr[1], arr[2], arr[3]
+
+=> arr.length = Tells you how many boxes exits
+=> arr[i] = Reaches into any single box by position
+
+=> Indexing: Index starts from 0.
+=> arr[0] is the first item.
+=> arr[1] is the second item, not the first.
+
+=> Rule of thumb: the Nth item always sits at index N - 1
+
+=> Getting a Value: arr[i]
+=> let x = arr[2] 
+=> x = 30
+=> arr[0] = 10; Reading never changes the array.
+=> arr[9] = undefined; No matching box, no crash.
+
+=> Setting a value: arr[i] = x
+=> arr[1] = 99;
+=> Before = 10, 20, 30
+=> After = 10, 99, 30
+=> Setting mutates the original array in place—no new array is created.
+=> এই সেটিংটি মূল অ্যারেটিকে অপরিবর্তিত অবস্থায় পরিবর্তন করে—কোনো নতুন অ্যারে তৈরি হয় না।
+=> Immutable = অপরিবর্তনীয়, Mutable = পরিবর্তনযোগ্য, Mutates = পরিবর্তিত হয়
+
+=> The length Property
+=> arr.length = 4
+=> Valid Indexes = 0, 1, 2, 3
+=> Last Valid Indexes = arr.length - 1 -> 3 
+=> length counts elements starting from 1 - indexes start from 0, so they're never equal to length
+
+=> Out-of-Range Index
+=> arr.length is 4, so arr[4] does not exist -> returns undefined
+
+
+=> let arr = [5, 10, 15]; -> [5, 10, 15] 
+=> arr[1] = 25; -> [5, 25, 15]
+=> let last = arr[arr.length - 1]; -> last = 15
+
+=> Common Mistakes
+    1. Using length as an index
+    arr[arr.length] -> undefined
+    Last index is length - 1, not length
+
+    2. Assuming index 1 is first
+    arr[1] -> second item
+    Counting starts at 0, not 1
+
+    3. Ignoring undefined results
+    No error is thrown - bugs hide silently
+    Always check the index is in range first
+
+    4. Confusing index with value
+    arr[2] is a position, not a value
+    The number in brackets is where, not what 
+
+=> Summary
+    
+    1. i = 0 -> Indexes start at 0, and last valid index is arr.length - 1
+    
+    2. get -> arr[i] reads the value stored at position i
+
+    3. set -> arr[i] = x overwrites the value stored at position i 
+
+    4. len -> arr.length tells you how many elements exist
+
+    5. ! -> Indexes outside 0 to length - 1 return undefined. not an error
+
+
+
+
+
+==== Adding & Removing - Array elements =====
+=> Four Methods, Two Ends of the Array
+=> Every array has a front (index 0) and a back (last index). Each method below acts on exactly one end.
+
+=> Start (index 0)
+    -> unshift() -- add to the start
+    -> shift() -- remove from the start
+
+=> End (last index)
+    -> push() -- Add to the end 
+    -> pop() -- Remove from the end
+
+=> Used push() and pop() because do not need to shift the all position like 1st to last if add or remove
+
+
+===== push() =====
+=> Adds one or more elements to the end of an array, then returns the array's new length. The original array is mutated in place.
+=> মূল অ্যারেটিকে তার নিজস্ব স্থানেই পরিবর্তন করা হয়।
+
+    syntax -> array.push(item1, item2, /* ... */, itemN)
+
+    Example
+    let fruits = ["apple", "banana"];
+    fruits.push("cherry");
+    // fruits -> ["apple", "banana", "cherry"]
+    // return: 3
+    Returns: the array's new length (a number)
+
+=> Fast because it writes to the next free slot at the end - nothing else in the array has to move.
+=> Constant Time => O(1)
+
+
+===== pop() =====
+=> Removes the last element from an array, and returns that removed element. If the array is empty, it returns undefined.
+
+    syntax -> array.pop()
+
+    Example
+    let fruits = ["apple", "banana", "cherry"];
+    let last = fruits.pop();
+    // fruits -> ["apple", "banana"]
+    // last === "cherry"
+    Returns: the removed element (here: "cherry")
+
+=> Like push(), pop() only touches the last slot - no reindexing, so it stays O(1) no matter the array's size.
+=> Constant Time => O(1)
+
+
+===== shift() =====
+=> Removes the first element from an array, shifts every remaining element down one index, and returns the removed element.
+
+    syntax -> array.shift()
+
+    Example
+    let fruits = ["apple", "banana", "cherry"];
+    let first = fruits.shift();
+    // fruits -> ["banana", "cherry"]
+    // first === "apple"
+    Returns: the removed element (here: "apple")
+
+=> Every remaining element's index changes, so the engine must re-write each one - that's why shift() is O(n), not O(1).
+=> Linear Time => O(n)
+
+
+===== unshift() =====
+=> Adds one or more elements to the start of an array, shifting existing elements to higher indices. Returns the new length.
+
+    syntax -> array.unshift(item1, item2, /* ... */, itemN)
+
+    Example
+    let fruits =  ["banana", "cherry"];
+    fruits.unshift("apple");
+    // fruits -> ["apple", "banana", "cherry"]
+    // return: 3
+    Returns: the array's new length (a number)
+
+=> The opposite cost of push(): existing elements must shift right to make room, so unshift() is also O(n) .
+=> Constant Time => O(1)
+
+Summary: Operation at the end of an array (push/pop) are cheap and O(1). Operation at the start (shift/unshift) are expensive and O(n) because every other element must be reindexing.
+
+
+
+
+
+===== Basic Array Methods =====
+=> An array is simply an ordered list of values. A method is a built-in function attached to that array, ready to search, combine, reshape, or read it - without you writing the logic from scratch.
+
+  - Dot syntax
+  - Return values
+  - No mutation 
+
+
+=> Includes(): Checks whether an array contains a given value. Returns a simple true or false - perfect for yes/no questions about your data.
+    -> It is used for Search. Check if value exists. Boolean.
+ 
+    syntax -> array.includes(valueToFind, fromIndex)
+
+
+=> indexOf(): Finds the position (index) of the first matching value in an array. Returns -1 if the value isn't found at all.
+    -> It is used for Search. Find index of value. Number (or -1).
+ 
+    syntax -> array.includes(searchElement, fromIndex)
+
+
+=> concat(): Merges two or more arrays into one brand-new array, leaving the original arrays completely unchanged.
+    -> It is used for Combine. Merge arrays. New array.
+
+    syntax -> array1.concat(array2, array3, ...)
+
+
+=> slice(): Copies a portion of an array into a new array, from a start index up to (but not including) an end index.
+    -> It is used for Extract. Extract a portion. New array.
+    -> Copies a portion (end excluded). 
+    -> Original stays untouched.
+
+    syntax -> array.slice(start, end)
+
+    -> start: which index it start.
+    -> end: it end, before given index
+
+    -> example: const num = [1, 2, 3, 4, 5]
+    num.slice(1, 3); Here, index 1, 2
+    // Output: [2, 3]
+
+
+=> join(): Joins every element of an array into a single string, placing your chosen separator between each item.
+    -> It is used for Convert. Convert to string. String.
+
+    syntax -> array.join(separator)
+
+
+=> isArray(): A static method that checks if a value is truly an array. Called on Array itself, not on an instance - useful before looping over unknown data. 
+    -> It is used for Validate. Checks if value is an array. Boolean.
+
+    syntax -> Array.isArray(value)
