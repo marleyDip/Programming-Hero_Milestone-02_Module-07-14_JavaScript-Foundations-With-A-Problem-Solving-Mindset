@@ -213,25 +213,25 @@ Summary: Operation at the end of an array (push/pop) are cheap and O(1). Operati
   - No mutation 
 
 
-=> Includes(): Checks whether an array contains a given value. Returns a simple true or false - perfect for yes/no questions about your data.
+=> 1. Includes(): Checks whether an array contains a given value. Returns a simple true or false - perfect for yes/no questions about your data.
     -> It is used for Search. Check if value exists. Boolean.
  
     syntax -> array.includes(valueToFind, fromIndex)
 
 
-=> indexOf(): Finds the position (index) of the first matching value in an array. Returns -1 if the value isn't found at all.
+=> 2. indexOf(): Finds the position (index) of the first matching value in an array. Returns -1 if the value isn't found at all.
     -> It is used for Search. Find index of value. Number (or -1).
  
     syntax -> array.includes(searchElement, fromIndex)
 
 
-=> concat(): Merges two or more arrays into one brand-new array, leaving the original arrays completely unchanged.
+=> 3. concat(): Merges two or more arrays into one brand-new array, leaving the original arrays completely unchanged.
     -> It is used for Combine. Merge arrays. New array.
 
     syntax -> array1.concat(array2, array3, ...)
 
 
-=> slice(): Copies a portion of an array into a new array, from a start index up to (but not including) an end index.
+=> 4. slice(): Copies a portion of an array into a new array, from a start index up to (but not including) an end index.
     -> It is used for Extract. Extract a portion. New array.
     -> Copies a portion (end excluded). 
     -> Original stays untouched.
@@ -246,13 +246,13 @@ Summary: Operation at the end of an array (push/pop) are cheap and O(1). Operati
     // Output: [2, 3]
 
 
-=> join(): Joins every element of an array into a single string, placing your chosen separator between each item.
+=> 5. join(): Joins every element of an array into a single string, placing your chosen separator between each item.
     -> It is used for Convert. Convert to string. String.
 
     syntax -> array.join(separator)
 
 
-=> isArray(): A static method that checks if a value is truly an array. Called on Array itself, not on an instance - useful before looping over unknown data. 
+=> 6. isArray(): A static method that checks if a value is truly an array. Called on Array itself, not on an instance - useful before looping over unknown data. 
     -> It is used for Validate. Checks if value is an array. Boolean.
 
     syntax -> Array.isArray(value)
