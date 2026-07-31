@@ -256,3 +256,5 @@ Summary: Operation at the end of an array (push/pop) are cheap and O(1). Operati
     -> It is used for Validate. Checks if value is an array. Boolean.
 
     syntax -> Array.isArray(value)
+	
+	

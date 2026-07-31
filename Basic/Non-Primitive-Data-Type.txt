@@ -18,6 +18,7 @@ Core Non-Primitive Categories -
     => const user = { name: "Alice", age: 25 };
 
 2. Arrays: Ordered lists of data indexed numerically, which are under-the-hood specialized objects.
+In JavaScript, an array is a special type of object specifically designed to store ordered, index-based collections of data.
 
     => const colors =["red", "green", "blue"];
 

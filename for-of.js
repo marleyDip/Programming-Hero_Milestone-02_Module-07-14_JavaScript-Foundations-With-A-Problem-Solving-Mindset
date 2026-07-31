@@ -1,5 +1,10 @@
 // Array Traversal Using for and while Loop
 
+// for...of loop gets one value from the array in each iteration
+// for...of loops through an iterable and gives one value at a time.
+
+// for...of gets each value directly from the array one by one, so no index is needed
+
 const numbers = [87, 54, 12, 63, 41, 87, 51];
 
 // for...of returns array values.

@@ -1,0 +1,44 @@
+
+An array is a reference data type (or non-primitive type) that functions as a specialized container object across most programming languages.
+
+
+=> In JavaScript, an array is a special type of object specifically designed to store ordered, index-based collections of data.
+
+   => While a regular object is an unordered collection of key-value pairs, an array is an instance of the global Array class.
+   
+   => Under the hood, it functions as a regular JavaScript object where the "keys" are automatically constrained to non-negative integers (indices like 0, 1, 2).
+
+
+
+Checking the Array Type
+
+Because arrays are natively objects, using standard type checks can occasionally look confusing:
+
+  => Using typeof: Running typeof [] will return "object". It does not return "array".
+  => Using instanceof: Checking [] instanceof Array will return true.
+  => The Prototype Chain: An array inherits its methods from Array.prototype. In turn, Array.prototype inherits from Object.prototype.
+  
+  
+  
+Key Differences Between Arrays and Standard Objects
+
+  Feature         Regular Object ({})            Array Object ([])
+  
+  Data Structure  Unordered key-value pairs      Ordered list of values
+  
+  Key Type        Arbitrary strings or symbols   Non-negative integers (indices)
+  
+  Tracking        Manual tracking of keys        Automatic length property tracking
+  
+  Methods         No built-in iteration methods  Built-in methods like map(), filter(), push()
+  
+  
+  
+How to Correctly Identify an Array
+=> Because typeof returns "object" for both regular objects and arrays, you should use the built-in Array.isArray() method to determine if a variable is truly an array
+
+	const fruits = ['apple', 'banana'];
+
+	console.log(typeof fruits);         // "object"
+	console.log(Array.isArray(fruits)); // true
+  
