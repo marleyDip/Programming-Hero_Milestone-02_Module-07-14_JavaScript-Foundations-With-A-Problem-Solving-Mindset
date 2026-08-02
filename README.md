@@ -3,7 +3,7 @@
 Welcome to my repository for **Programming Hero - Milestone 02 (Modules 07-14)**. This milestone focuses entirely on mastering core JavaScript concepts and developing the critical analytical skills required to solve programming challenges efficiently.
 
 ## 📝 Project Overview
-Deep diving into JavaScript fundamentals. This repository tracks my hands-on progress through Modules 07 to 14 of Programming Hero's Milestone 02. The core focus here is building a robust problem-solving and debugging mindset - mastering everything from arrays and loops to functions, objects, and error-hunting tactics required for clean, efficient web development. Through structured daily practice, I am systematically sharpening my skills in traversing multi-dimensional structures, manipulating strings, and managing complex key-value pairs. 
+Deep-diving into JavaScript fundamentals. This repository tracks my hands-on progress through Modules 07 to 14 of Programming Hero's Milestone 02. The core focus here is building a robust problem-solving and debugging mindset - mastering everything from arrays and loops to functions, objects, and error-hunting tactics required for clean, efficient web development. Through structured daily practice, I am systematically sharpening my skills in traversing multi-dimensional structures, manipulating strings, and managing complex key-value pairs. 
 
 ## 📚 What's Inside?
 - **Core Syntaxes:** JavaScript fundamental concepts (variables, conditionals, loops, functions, objects).
